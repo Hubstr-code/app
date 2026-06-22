@@ -370,7 +370,7 @@ describe('MarketService', () => {
         identifier: 'twitter',
         meta: {
           avatar: '🐦',
-          description: 'LobeHub Skill: X (Twitter)',
+          description: 'Hubstr Skill: X (Twitter)',
           tags: ['lobehub-skill', 'twitter'],
           title: 'X (Twitter)',
         },
@@ -409,7 +409,7 @@ describe('MarketService', () => {
       const manifests = await service.getLobehubSkillManifests();
       expect(manifests).toHaveLength(1);
       expect(manifests[0].meta).toMatchObject({
-        description: 'LobeHub Skill: Notion',
+        description: 'Hubstr Skill: Notion',
         title: 'Notion',
       });
     });

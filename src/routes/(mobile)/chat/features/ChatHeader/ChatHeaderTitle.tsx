@@ -10,6 +10,7 @@ import { agentSelectors, builtinAgentSelectors } from '@/store/agent/selectors';
 import { useChatStore } from '@/store/chat';
 import { topicSelectors } from '@/store/chat/selectors';
 import { useGlobalStore } from '@/store/global';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 const ChatHeaderTitle = memo(() => {
   const { t } = useTranslation(['chat', 'topic']);
@@ -21,7 +22,7 @@ const ChatHeaderTitle = memo(() => {
   const isInbox = useAgentStore(builtinAgentSelectors.isInboxAgent);
   const title = useAgentStore(agentSelectors.currentAgentTitle);
 
-  const displayTitle = isInbox ? 'Lobe AI' : title;
+  const displayTitle = isInbox ? DEFAULT_INBOX_TITLE : title;
 
   return (
     <ChatHeader.Title

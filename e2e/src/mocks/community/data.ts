@@ -24,7 +24,7 @@ const UPDATED_AT = '2026-01-10T00:00:00.000Z';
 
 export const mockAssistantItems: DiscoverAssistantItem[] = [
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     avatar: '🤖',
     backgroundColor: '#1890ff',
     category: 'general',
@@ -50,7 +50,7 @@ export const mockAssistantItems: DiscoverAssistantItem[] = [
     userName: 'lobehub',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     avatar: '💻',
     backgroundColor: '#52c41a',
     category: 'programming',
@@ -76,7 +76,7 @@ export const mockAssistantItems: DiscoverAssistantItem[] = [
     userName: 'lobehub',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     avatar: '🎓',
     backgroundColor: '#faad14',
     category: 'academic',
@@ -102,7 +102,7 @@ export const mockAssistantItems: DiscoverAssistantItem[] = [
     userName: 'lobehub',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     avatar: '✍️',
     backgroundColor: '#722ed1',
     category: 'copywriting',
@@ -240,7 +240,7 @@ export const mockProviderList: ProviderListResponse = {
 
 export const mockMcpItems: DiscoverMcpItem[] = [
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     capabilities: { prompts: false, resources: false, tools: true },
     category: 'business',
     connectionType: 'stdio',
@@ -261,7 +261,7 @@ export const mockMcpItems: DiscoverMcpItem[] = [
     updatedAt: UPDATED_AT,
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     capabilities: { prompts: false, resources: true, tools: true },
     category: 'developer',
     connectionType: 'stdio',
@@ -283,7 +283,7 @@ export const mockMcpItems: DiscoverMcpItem[] = [
     updatedAt: UPDATED_AT,
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     capabilities: { prompts: true, resources: false, tools: true },
     category: 'productivity',
     connectionType: 'http',
@@ -344,7 +344,7 @@ export const mockAssistantDetails = mockAssistantItems.map((item) => ({
 
 export const mockMcpDetails = mockMcpItems.map((item) => ({
   ...item,
-  author: { name: item.author ?? 'LobeHub', url: 'https://lobehub.com' },
+  author: { name: item.author ?? 'Hubstr', url: 'https://lobehub.com' },
   deploymentOptions: [
     {
       connection: { command: 'npx', type: item.connectionType ?? 'stdio' },

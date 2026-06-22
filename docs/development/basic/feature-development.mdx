@@ -1,23 +1,23 @@
 ---
-title: LobeHub Feature Development Complete Guide
-description: A comprehensive guide for developers on implementing features in LobeHub.
+title: Hubstr Feature Development Complete Guide
+description: A comprehensive guide for developers on implementing features in Hubstr.
 tags:
-  - LobeHub
+  - Hubstr
   - Feature Development
   - Developer Guide
   - Postgres
   - Drizzle ORM
 ---
 
-# LobeHub Feature Development Complete Guide
+# Hubstr Feature Development Complete Guide
 
-This document aims to guide developers on how to develop a complete feature in LobeHub.
+This document aims to guide developers on how to develop a complete feature in Hubstr.
 
-We will use [RFC 021 - Custom Assistant Opening Guidance](https://github.com/lobehub/lobehub/discussions/891) as an example to illustrate the complete implementation process.
+We will use [RFC 021 - Custom Assistant Opening Guidance](https://github.com/Hubstr-code/app/discussions/891) as an example to illustrate the complete implementation process.
 
 ## 1. Update Schema
 
-LobeHub uses a PostgreSQL database, with [Drizzle ORM](https://orm.drizzle.team/) to operate the database.
+Hubstr uses a PostgreSQL database, with [Drizzle ORM](https://orm.drizzle.team/) to operate the database.
 
 All schemas are located in `packages/database/src/schemas/`. We need to adjust the `agents` table to add two fields corresponding to the configuration items:
 
@@ -53,7 +53,7 @@ Note that sometimes we may also need to update the index, but for this feature, 
 
 ### Database Migration
 
-After adjusting the schema, you need to generate and optimize migration files. See the [Database Migration Guide](https://github.com/lobehub/lobehub/blob/main/.agents/skills/drizzle/references/db-migrations.md) for detailed steps.
+After adjusting the schema, you need to generate and optimize migration files. See the [Database Migration Guide](https://github.com/Hubstr-code/app/blob/main/.agents/skills/drizzle/references/db-migrations.md) for detailed steps.
 
 ## 2. Update Data Model
 
@@ -142,7 +142,7 @@ For this feature, `updateSessionConfig` simply merges config without field-level
 
 ### Data Flow Store Implementation
 
-LobeHub uses [zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) as the global state management framework. For detailed practices on state management, refer to [State Management Best Practices](/docs/development/state-management/state-management-intro).
+Hubstr uses [zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) as the global state management framework. For detailed practices on state management, refer to [State Management Best Practices](/docs/development/state-management/state-management-intro).
 
 There are two stores related to the agent:
 
@@ -217,7 +217,7 @@ export const agentSelectors = {
 
 ### i18n Handling
 
-LobeHub is an internationalized project using [react-i18next](https://github.com/i18next/react-i18next). Newly added UI text needs to:
+Hubstr is an internationalized project using [react-i18next](https://github.com/i18next/react-i18next). Newly added UI text needs to:
 
 1. Add keys to the corresponding namespace file in `src/locales/default/` (default language is English):
 
@@ -332,7 +332,7 @@ const WelcomeMessage = () => {
 
 ## 5. Testing
 
-The project uses Vitest for unit testing. See the [Testing Skill Guide](https://github.com/lobehub/lobehub/blob/main/.agents/skills/testing/SKILL.md) for details.
+The project uses Vitest for unit testing. See the [Testing Skill Guide](https://github.com/Hubstr-code/app/blob/main/.agents/skills/testing/SKILL.md) for details.
 
 **Running tests:**
 
@@ -364,4 +364,4 @@ If you just want to check whether existing tests pass without running locally, y
 
 ## Summary
 
-The above is the complete implementation process for the LobeHub opening settings feature, covering the full chain from database schema → data model → Service/Model → Store → i18n → UI → testing. Developers can refer to this document for developing related features.
+The above is the complete implementation process for the Hubstr opening settings feature, covering the full chain from database schema → data model → Service/Model → Store → i18n → UI → testing. Developers can refer to this document for developing related features.

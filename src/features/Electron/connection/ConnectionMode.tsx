@@ -1,7 +1,7 @@
 import { type StorageMode } from '@lobechat/electron-client-ipc';
 import { StorageModeEnum } from '@lobechat/electron-client-ipc';
 import { Button, Center, Flexbox, Input, stopPropagation } from '@lobehub/ui';
-import { LobeHub } from '@lobehub/ui/brand';
+import { Hubstr } from '@lobehub/ui/brand';
 import { createStaticStyles } from 'antd-style';
 import { Server } from 'lucide-react';
 import { memo, useCallback, useState } from 'react';
@@ -147,7 +147,7 @@ const ConnectionMode = memo<ConnectionModeProps>(({ setWaiting }) => {
           </Flexbox>
           <Option
             description={t('sync.lobehubCloud.description')}
-            icon={LobeHub}
+            icon={Hubstr}
             isSelected={selectedOption === StorageModeEnum.Cloud}
             label={t('sync.lobehubCloud.title')}
             value={StorageModeEnum.Cloud}

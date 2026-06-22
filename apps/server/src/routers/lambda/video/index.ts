@@ -1,7 +1,7 @@
 import { randomBytes } from 'node:crypto';
 
 import { BRANDING_PROVIDER } from '@lobechat/business-const';
-import { isLobeHubModelAvailable } from '@lobechat/business-model-bank/model-config';
+import { isHubstrModelAvailable } from '@lobechat/business-model-bank/model-config';
 import {
   buildMappedBusinessModelFields,
   resolveBusinessModelMapping,
@@ -90,14 +90,14 @@ export const videoRouter = router({
       // model is no longer in the model bank.
       if (
         provider === BRANDING_PROVIDER &&
-        !(await isLobeHubModelAvailable(resolvedModelId, 'video', {
+        !(await isHubstrModelAvailable(resolvedModelId, 'video', {
           getUserEmail: async () => (await UserModel.findById(serverDB, userId))?.email,
         }))
       ) {
         throw new TRPCError({
           cause: { data: { modelType: 'video', requestedModel: model } },
           code: 'BAD_REQUEST',
-          message: ChatErrorType.LobeHubModelDeprecated,
+          message: ChatErrorType.HubstrModelDeprecated,
         });
       }
 

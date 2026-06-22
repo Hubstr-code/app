@@ -196,7 +196,7 @@ export class AgentModel {
 
   /**
    * Get minimal agent info (avatar, title, backgroundColor) by IDs.
-   * For inbox agent (slug='inbox'), falls back to LobeAI defaults when avatar/title are missing.
+   * For inbox agent (slug='inbox'), falls back to Hubstr AI defaults when avatar/title are missing.
    */
   getAgentAvatarsByIds = async (ids: string[]) => {
     if (ids.length === 0) return [];
@@ -220,7 +220,7 @@ export class AgentModel {
    * the inbox (other virtual agents excluded), ordered by `updatedAt DESC` with
    * the inbox pinned to the top.
    *
-   * Title fallback is fully owned here: the inbox resolves to the LobeAI
+   * Title fallback is fully owned here: the inbox resolves to the Hubstr AI
    * default, and any other agent with a blank title resolves to
    * `options.fallbackTitle` (default `null`, so a caller that omits it can let
    * the client supply its own i18n default).

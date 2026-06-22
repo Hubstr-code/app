@@ -132,7 +132,7 @@ describe('computeChatPricing', () => {
     });
   });
 
-  describe('LobeHub-hosted DeepSeek', () => {
+  describe('Hubstr-hosted DeepSeek', () => {
     interface HostedPricingCase {
       expectedCredits: Record<string, number>;
       expectedUnits: Pricing['units'];
@@ -223,7 +223,7 @@ describe('computeChatPricing', () => {
     ] satisfies HostedPricingCase[];
 
     it.each(hostedPricingCases)(
-      'applies LobeHub-hosted official pricing for $modelId',
+      'applies Hubstr-hosted official pricing for $modelId',
       ({ expectedCredits, expectedUnits, modelId }) => {
         const pricing: Pricing = { units: expectedUnits };
 

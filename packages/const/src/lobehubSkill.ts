@@ -39,7 +39,7 @@ export interface LobehubSkillProviderType {
 export type LobehubConnectorProviderType = LobehubSkillProviderType;
 
 /**
- * Predefined LobeHub Skill Provider list
+ * Predefined Hubstr Skill Provider list
  *
  * Note:
  * - This list is used for UI display (icons, labels)
@@ -48,7 +48,7 @@ export type LobehubConnectorProviderType = LobehubSkillProviderType;
  */
 export const LOBEHUB_SKILL_PROVIDERS: LobehubSkillProviderType[] = [
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     authorUrl: 'https://lobehub.com',
     defaultVisible: true,
     description:
@@ -60,7 +60,7 @@ export const LOBEHUB_SKILL_PROVIDERS: LobehubSkillProviderType[] = [
       'Connect to GitHub to access your repositories, create and manage issues, review pull requests, and collaborate on code—all through natural conversation with your AI assistant.',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     authorUrl: 'https://lobehub.com',
     defaultVisible: true,
     description:
@@ -72,7 +72,7 @@ export const LOBEHUB_SKILL_PROVIDERS: LobehubSkillProviderType[] = [
     label: 'Linear',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     authorUrl: 'https://lobehub.com',
     defaultVisible: true,
     description:
@@ -84,7 +84,7 @@ export const LOBEHUB_SKILL_PROVIDERS: LobehubSkillProviderType[] = [
     label: 'Outlook Calendar',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     authorUrl: 'https://lobehub.com',
     defaultVisible: true,
     description: 'Notion is a collaborative productivity and note-taking application.',
@@ -95,7 +95,7 @@ export const LOBEHUB_SKILL_PROVIDERS: LobehubSkillProviderType[] = [
     label: 'Notion',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     authorUrl: 'https://lobehub.com',
     defaultVisible: true,
     description:
@@ -107,7 +107,7 @@ export const LOBEHUB_SKILL_PROVIDERS: LobehubSkillProviderType[] = [
     label: 'X (Twitter)',
   },
   {
-    author: 'LobeHub',
+    author: 'Hubstr',
     authorUrl: 'https://lobehub.com',
     defaultVisible: true,
     description:

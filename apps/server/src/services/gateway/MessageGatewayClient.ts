@@ -46,8 +46,8 @@ export interface MessageGatewayStats {
  *
  * The gateway is a pure connection proxy — it only manages persistent
  * connections (WebSocket/long-polling) and forwards inbound events to
- * LobeHub's webhook. Outbound messaging is NOT routed through the gateway;
- * LobeHub calls platform REST APIs directly.
+ * Hubstr's webhook. Outbound messaging is NOT routed through the gateway;
+ * Hubstr calls platform REST APIs directly.
  */
 export class MessageGatewayClient {
   private baseUrl: string;

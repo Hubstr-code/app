@@ -159,7 +159,7 @@ export interface ToolExecutionContext {
   projectSkills?: { location: string; name: string }[];
   /** Conversation scope captured when the operation was created */
   scope?: string | null;
-  /** Server database for LobeHub Skills execution */
+  /** Server database for Hubstr Skills execution */
   serverDB?: LobeChatDatabase;
   /** Skip low-level result truncation so the AgentRuntime boundary can archive full content first. */
   skipResultTruncation?: boolean;

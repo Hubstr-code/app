@@ -1223,7 +1223,7 @@ export class AiAgentService {
 
       // Resolve GitHub OAuth token for the sandbox. Always attempt so CC can use
       // git / gh CLI even when no repos are pre-selected. Falls back to the
-      // standard 'github' key (LobeHub OAuth connector default); agent config can
+      // standard 'github' key (Hubstr OAuth connector default); agent config can
       // override via GITHUB_CRED_KEY.
       let githubToken: string | undefined;
       const githubCredKey =
@@ -1764,7 +1764,7 @@ export class AiAgentService {
         return info?.abilities?.functionCall ?? true;
       };
 
-      // 5c. Fetch LobeHub Skills manifests
+      // 5c. Fetch Hubstr Skills manifests
       try {
         lobehubSkillManifests = await this.marketService.getLobehubSkillManifests();
       } catch (error) {
@@ -1999,7 +1999,7 @@ export class AiAgentService {
           ...agentPlugins,
           ...(disableLocalSystem ? [] : [LocalSystemManifest.identifier]),
           RemoteDeviceManifest.identifier,
-          // Include LobeHub Skills and Composio tools so they are passed to generateToolsDetailed
+          // Include Hubstr Skills and Composio tools so they are passed to generateToolsDetailed
           ...lobehubSkillManifests.map((m) => m.identifier),
           ...composioManifests.map((m) => m.identifier),
           // Connector manifests are also injected as additionalManifests
@@ -2022,7 +2022,7 @@ export class AiAgentService {
 
       // Single guard for every `toolManifestMap[id] = ...` ingest below.
       // Mirrors the post-merge filter in `createServerToolsEngine`: an
-      // installed plugin, a LobeHub Skill, or a Composio manifest declaring
+      // installed plugin, a Hubstr Skill, or a Composio manifest declaring
       // `identifier: 'lobe-remote-device'` would otherwise reach the
       // activator-discovery map and let an external bot sender enable it
       // (). Centralising the check at the ingest layer means

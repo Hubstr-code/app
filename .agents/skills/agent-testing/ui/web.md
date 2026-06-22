@@ -72,7 +72,7 @@ agent-browser --auto-connect snapshot -i
 ## Option C — Debug Proxy (local frontend, production backend)
 
 `bun run dev:spa` prints a **Debug Proxy** URL
-(`https://app.lobehub.com/_dangerous_local_dev_proxy?debug-host=…`) that loads
+(`https://app.hubstr.com/_dangerous_local_dev_proxy?debug-host=…`) that loads
 your local Vite SPA inside the online environment — HMR against real server
 config. Useful for verifying frontend behavior against production data, **not**
 for testing backend changes (the backend is production, not your branch).

@@ -252,7 +252,7 @@ export const createServerAgentToolsEngine = (
   };
 
   return createServerToolsEngine(context, {
-    // Pass additional manifests (e.g., LobeHub Skills)
+    // Pass additional manifests (e.g., Hubstr Skills)
     additionalManifests,
     // Physically drop device-tool manifests for turns whose access policy
     // denies them. Without this filter, `lobe-activator`'s explicit

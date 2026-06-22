@@ -413,7 +413,7 @@ describe('resolveMemoryActionTargetFromState', () => {
                   id: 'identity-existing',
                   mergeStrategy: 'replace',
                   set: {
-                    details: 'The user clarified that they maintain LobeHub Agent Signal code.',
+                    details: 'The user clarified that they maintain Hubstr Agent Signal code.',
                     summary: 'The user maintains Agent Signal memory receipt behavior.',
                     title: 'Maintains Agent Signal receipts',
                   },

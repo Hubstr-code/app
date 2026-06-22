@@ -229,7 +229,7 @@ describe('numericId contract', () => {
     for (const code of [
       ChatErrorType.FreePlanLimit,
       ChatErrorType.InsufficientBudgetForModel,
-      ChatErrorType.LobeHubModelDeprecated,
+      ChatErrorType.HubstrModelDeprecated,
     ]) {
       const spec = ERROR_CODE_SPECS[code];
       expect(spec, code).toBeDefined();

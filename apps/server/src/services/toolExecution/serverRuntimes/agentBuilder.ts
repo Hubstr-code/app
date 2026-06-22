@@ -44,7 +44,7 @@ export const agentBuilderRuntime: ServerRuntimeRegistration = {
           const allProviders = await aiInfraRepos.getAiProviderList();
           const enabledProviders = allProviders.filter((p) => p.enabled);
 
-          // LobeHub provider first, then by sort order
+          // Hubstr provider first, then by sort order
           enabledProviders.sort((a, b) => {
             if (a.id === BRANDING_PROVIDER) return -1;
             if (b.id === BRANDING_PROVIDER) return 1;

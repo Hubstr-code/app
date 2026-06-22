@@ -4,20 +4,20 @@ import { t } from 'i18next';
 
 import { message } from '@/components/AntdStaticMethods';
 
-interface LobeHubModelDeprecatedErrorData {
+interface HubstrModelDeprecatedErrorData {
   modelType?: string;
   requestedModel?: string;
 }
 
-export const handleLobeHubModelDeprecatedError = (error: unknown) => {
-  if (!(error instanceof TRPCClientError) || error.message !== ChatErrorType.LobeHubModelDeprecated)
+export const handleHubstrModelDeprecatedError = (error: unknown) => {
+  if (!(error instanceof TRPCClientError) || error.message !== ChatErrorType.HubstrModelDeprecated)
     return;
 
-  const requestedModel = (error.data?.errorData as LobeHubModelDeprecatedErrorData | undefined)
+  const requestedModel = (error.data?.errorData as HubstrModelDeprecatedErrorData | undefined)
     ?.requestedModel;
 
   message.error(
-    t('response.LobeHubModelDeprecated', {
+    t('response.HubstrModelDeprecated', {
       model: requestedModel ?? '-',
       ns: 'error',
     }),

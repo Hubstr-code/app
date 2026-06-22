@@ -150,7 +150,7 @@ const SkillList = memo<SkillListProps>(
     };
 
     // Separate skills into three categories:
-    // 1. Integrations (Builtin, LobeHub and Composio skills)
+    // 1. Integrations (Builtin, Hubstr and Composio skills)
     // 2. Community MCP Tools (type === 'plugin')
     // 3. Custom MCP Tools (type === 'customPlugin')
     const { integrations, communityMCPs, customMCPs } = useMemo(() => {
@@ -453,7 +453,7 @@ const SkillList = memo<SkillListProps>(
         {hasBuiltinTools &&
           renderSection(
             'builtinTools',
-            t('skillGroup.builtinTools', 'LobeHub 内置 Tools'),
+            t('skillGroup.builtinTools', 'Hubstr 内置 Tools'),
             builtinToolItems.map((item) => {
               if (item.type !== 'builtin') return null;
               const localizedTitle = t(`tools.builtins.${item.builtinTool.identifier}.title`, {

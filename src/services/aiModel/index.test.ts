@@ -46,7 +46,7 @@ describe('AiModelService', () => {
           type: 'chat',
         },
         {
-          displayName: 'LobeHub Onboarding',
+          displayName: 'Hubstr Onboarding',
           enabled: true,
           id: 'lobehub-onboarding-v1',
           type: 'chat',

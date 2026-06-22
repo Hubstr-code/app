@@ -19,7 +19,7 @@ export interface ConnectorOAuthStatePayload {
   codeVerifier: string;
   /** The connector being connected. */
   connectorId: string;
-  /** LobeHub user who initiated the connect. */
+  /** Hubstr user who initiated the connect. */
   lobeUserId: string;
   /** Where to send the user after the callback finishes (relative path). */
   returnTo?: string;

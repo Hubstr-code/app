@@ -7,6 +7,7 @@ import { DEFAULT_AVATAR, DEFAULT_INBOX_AVATAR } from '@/const/meta';
 import GroupAvatar from '@/features/GroupAvatar';
 import WorkspaceLink from '@/features/Workspace/WorkspaceLink';
 import { type SharedTopicData } from '@/types/topic';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 interface ActionBarProps {
   data: SharedTopicData;
@@ -17,7 +18,7 @@ const ActionBar = memo<ActionBarProps>(({ data }) => {
   const isGroup = !!data?.groupId;
   const isInboxAgent = !isGroup && data?.agentMeta?.slug === 'inbox';
   const agentOrGroupTitle =
-    data?.groupMeta?.title || (isInboxAgent ? 'Lobe AI' : data?.agentMeta?.title);
+    data?.groupMeta?.title || (isInboxAgent ? DEFAULT_INBOX_TITLE : data?.agentMeta?.title);
   const agentMarketIdentifier = data?.agentMeta?.marketIdentifier;
 
   // Build group avatars for GroupAvatar component

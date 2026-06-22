@@ -1239,7 +1239,7 @@ describe('StreamingExecutor actions', () => {
       );
     });
 
-    it('should not enable visual understanding when the active LobeHub model supports visual media natively', () => {
+    it('should not enable visual understanding when the active Hubstr model supports visual media natively', () => {
       act(() => {
         useChatStore.setState({ executeClientAgent: realExecAgentRuntime });
       });
@@ -1282,7 +1282,7 @@ describe('StreamingExecutor actions', () => {
       vi.spyOn(agentConfigResolver, 'resolveAgentConfig').mockReturnValue({
         agentConfig: createMockAgentConfig({
           model: 'gemini-3.1-flash-lite-preview',
-          provider: ModelProvider.LobeHub,
+          provider: ModelProvider.Hubstr,
         }),
         chatConfig: createMockChatConfig(),
         isBuiltinAgent: false,

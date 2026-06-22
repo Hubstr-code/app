@@ -259,7 +259,7 @@ export const contextEngineering = async ({
             const server = allComposioServers.find((s) => s.identifier === composioType.identifier);
 
             officialTools.push({
-              description: `LobeHub Mcp Server: ${composioType.label}`,
+              description: `Hubstr Mcp Server: ${composioType.label}`,
               enabled: enabledPlugins.includes(composioType.identifier),
               identifier: composioType.identifier,
               installed: !!server,
@@ -281,7 +281,7 @@ export const contextEngineering = async ({
             const server = allLobehubSkillServers.find((s) => s.identifier === provider.id);
 
             officialTools.push({
-              description: `LobeHub Skill Provider: ${provider.label}`,
+              description: `Hubstr Skill Provider: ${provider.label}`,
               enabled: enabledPlugins.includes(provider.id),
               identifier: provider.id,
               installed: !!server,
@@ -756,7 +756,7 @@ export const contextEngineering = async ({
           : '',
       // NOTICE(@nekomeowww): required by builtin-tool-memory/src/systemRole.ts
       memory_effort: () => (userMemoryConfig ? (memoryContext?.effort ?? '') : ''),
-      // Current agent + topic identity — referenced by the LobeHub builtin
+      // Current agent + topic identity — referenced by the Hubstr builtin
       // skill (packages/builtin-skills/src/lobehub/content.ts) so the model
       // can run `lh agent run -a {{agent_id}}` etc without first having to
       // search for itself. Read lazily from stores so we only pay the cost

@@ -1,11 +1,12 @@
 {
-  "name": "@lobehub/cli",
+  "name": "@hubstr/cli",
   "version": "0.0.32",
   "type": "module",
   "bin": {
+    "hubstr": "./dist/index.js",
     "lh": "./dist/index.js",
     "lobe": "./dist/index.js",
-    "lobehub": "./dist/index.js"
+    "hubstr": "./dist/index.js"
   },
   "man": [
     "./man/man1/lh.1",

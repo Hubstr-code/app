@@ -14,7 +14,7 @@ const {
   mockCreateAsyncCaller,
   mockFindUserById,
   mockInsertValues,
-  mockIsLobeHubModelAvailable,
+  mockIsHubstrModelAvailable,
   mockResolveBusinessModelMapping,
 } = vi.hoisted(() => ({
   mockServerDB: {
@@ -27,7 +27,7 @@ const {
   mockCreateAsyncCaller: vi.fn(),
   mockFindUserById: vi.fn(),
   mockInsertValues: [] as unknown[],
-  mockIsLobeHubModelAvailable: vi.fn(),
+  mockIsHubstrModelAvailable: vi.fn(),
   mockResolveBusinessModelMapping: vi.fn(),
 }));
 
@@ -74,13 +74,13 @@ vi.mock('@lobechat/business-model-runtime', async (importOriginal) => ({
 }));
 
 vi.mock('@lobechat/business-model-bank/model-config', () => ({
-  isLobeHubModelAvailable: (
+  isHubstrModelAvailable: (
     ...args: [
       string,
       string,
       { getUserEmail?: () => Promise<string | null | undefined>; userEmail?: string | null }?,
     ]
-  ) => mockIsLobeHubModelAvailable(...args),
+  ) => mockIsHubstrModelAvailable(...args),
 }));
 
 // Mock async caller
@@ -142,7 +142,7 @@ describe('imageRouter', () => {
     mockGetKeyFromFullUrl.mockResolvedValue(null);
     mockGetFullFileUrl.mockResolvedValue(null);
     mockFindUserById.mockResolvedValue({ email: 'user@example.com' });
-    mockIsLobeHubModelAvailable.mockResolvedValue(true);
+    mockIsHubstrModelAvailable.mockResolvedValue(true);
 
     // Setup default transaction mock
     const mockBatch = {
@@ -232,10 +232,10 @@ describe('imageRouter', () => {
 
       expect(result.success).toBe(true);
       expect(mockResolveBusinessModelMapping).toHaveBeenCalledWith('lobehub', 'onboarding-image');
-      expect(mockIsLobeHubModelAvailable).toHaveBeenCalledWith('gpt-image-1', 'image', {
+      expect(mockIsHubstrModelAvailable).toHaveBeenCalledWith('gpt-image-1', 'image', {
         getUserEmail: expect.any(Function),
       });
-      const availabilityOptions = mockIsLobeHubModelAvailable.mock.calls.at(-1)?.[2];
+      const availabilityOptions = mockIsHubstrModelAvailable.mock.calls.at(-1)?.[2];
       expect(mockFindUserById).not.toHaveBeenCalled();
       await expect(availabilityOptions!.getUserEmail!()).resolves.toBe('user@example.com');
       expect(mockFindUserById).toHaveBeenCalledWith(mockServerDB, mockUserId);
@@ -243,7 +243,7 @@ describe('imageRouter', () => {
     });
 
     it('should reject unavailable lobehub image models before creating async tasks', async () => {
-      mockIsLobeHubModelAvailable.mockResolvedValue(false);
+      mockIsHubstrModelAvailable.mockResolvedValue(false);
 
       const ctx = createMockCtx();
       const input = createDefaultInput({
@@ -255,7 +255,7 @@ describe('imageRouter', () => {
 
       await expect(caller.createImage(input)).rejects.toMatchObject({
         code: 'BAD_REQUEST',
-        message: 'LobeHubModelDeprecated',
+        message: 'HubstrModelDeprecated',
       });
 
       expect(mockServerDB.transaction).not.toHaveBeenCalled();

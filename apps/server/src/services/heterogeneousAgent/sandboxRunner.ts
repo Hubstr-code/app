@@ -114,7 +114,7 @@ function buildRepoSetupScript(repos: string[], githubToken?: string): string | n
  * Uses the configured sandbox provider so cloud, third-party, and self-hosted
  * sandboxes share the same launch path.
  *
- * The sandbox container already has `lh` (the LobeHub CLI) installed.
+ * The sandbox container already has `lh` (the Hubstr CLI) installed.
  * The operation-scoped JWT is injected as `LOBEHUB_JWT` so the CLI can
  * authenticate against `heteroIngest` / `heteroFinish` without user creds.
  *

@@ -162,7 +162,7 @@ const resolveBot = async (
  * Resolve a system-bot messenger installation row into a runnable
  * `MessageRuntimeService`. Authorization: only the user who installed the
  * row can target it — workspace admins who installed under a different
- * LobeHub account need their own session.
+ * Hubstr account need their own session.
  */
 const resolveMessengerInstall = async (
   ctx: { serverDB: any; userId: string },

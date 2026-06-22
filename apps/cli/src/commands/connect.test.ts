@@ -176,7 +176,7 @@ describe('connect command', () => {
     await program.parseAsync(['node', 'test', 'connect']);
 
     expect(connectCalled).toBe(true);
-    expect(log.info).toHaveBeenCalledWith(expect.stringContaining('LobeHub CLI'));
+    expect(log.info).toHaveBeenCalledWith(expect.stringContaining('Hubstr CLI'));
   });
 
   it('should require explicit gateway for custom login server', async () => {

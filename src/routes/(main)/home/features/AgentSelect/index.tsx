@@ -17,6 +17,7 @@ import { homeAgentListSelectors } from '@/store/home/selectors';
 
 import AgentList from './AgentList';
 import { useResolvedHomeAgentId } from './useResolvedHomeAgentId';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 const styles = createStaticStyles(({ css, cssVar }) => ({
   chevron: css`
@@ -58,7 +59,7 @@ const AgentSelect = memo(() => {
 
   const displayMeta = isInboxDisplay ? inboxMeta : (sidebarItem ?? agentMapMeta);
 
-  const fallbackTitle = isInboxDisplay ? 'Lobe AI' : t('defaultSession', { ns: 'common' });
+  const fallbackTitle = isInboxDisplay ? DEFAULT_INBOX_TITLE : t('defaultSession', { ns: 'common' });
   const displayTitle = displayMeta?.title || fallbackTitle;
   const displayAvatar =
     (typeof displayMeta?.avatar === 'string' ? displayMeta.avatar : undefined) ||

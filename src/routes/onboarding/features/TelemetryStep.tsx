@@ -14,6 +14,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { ProductLogo } from '@/components/Branding';
 import { PRIVACY_URL, TERMS_URL } from '@/const/url';
 import { useUserStore } from '@/store/user';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 interface TelemetryStepProps {
   onNext: () => void;
@@ -70,7 +71,7 @@ const TelemetryStep = memo<TelemetryStepProps>(({ onNext }) => {
             pauseDuration={16_000}
             typingSpeed={64}
             sentences={[
-              t('telemetry.title', { name: 'Lobe AI' }),
+              t('telemetry.title', { name: DEFAULT_INBOX_TITLE }),
               t('telemetry.title2'),
               t('telemetry.title3'),
             ]}

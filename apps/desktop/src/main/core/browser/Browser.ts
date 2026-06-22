@@ -617,7 +617,7 @@ export default class Browser {
    * Bind this window's session to the backend proxy. The `app://` request
    * interceptor (wired in `App.ts`) consumes this context to route
    * `/trpc`, `/webapi`, `/api/auth`, and `/market` requests to the remote
-   * LobeHub server.
+   * Hubstr server.
    */
   private setupRemoteServerRequestHook(browserWindow: BrowserWindow): void {
     const session = browserWindow.webContents.session;

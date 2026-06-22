@@ -1,6 +1,6 @@
 /**
  * OTel GenAI Semantic Convention attribute names used by the Agent Runtime
- * instrumentation, alongside LobeHub-specific (`lobehub.*`) extensions.
+ * instrumentation, alongside Hubstr-specific (`lobehub.*`) extensions.
  *
  * Aligned with OTel GenAI Semantic Conventions v1.41:
  * https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/
@@ -63,7 +63,7 @@ export const ATTR_GEN_AI_TOOL_CALL_ID = 'gen_ai.tool.call.id' as const;
 export const ATTR_GEN_AI_TOOL_CALL_ARGUMENTS = 'gen_ai.tool.call.arguments' as const;
 export const ATTR_GEN_AI_TOOL_CALL_RESULT = 'gen_ai.tool.call.result' as const;
 
-// ---- lobehub.* (LobeHub-specific extensions) ----
+// ---- lobehub.* (Hubstr-specific extensions) ----
 
 /** Internal operation id assigned by the Agent Runtime. */
 export const ATTR_LOBEHUB_AGENT_OPERATION_ID = 'lobehub.agent.operation.id' as const;
@@ -83,7 +83,7 @@ export const ATTR_LOBEHUB_TOOL_SUCCESS = 'lobehub.tool.success' as const;
 /** Attempts taken to execute a tool (1 for first-try success). */
 export const ATTR_LOBEHUB_TOOL_ATTEMPTS = 'lobehub.tool.attempts' as const;
 
-/** Internal LobeHub tool source (`builtin` / `client` / `mcp` / `composio` / `lobehubSkill`). */
+/** Internal Hubstr tool source (`builtin` / `client` / `mcp` / `composio` / `lobehubSkill`). */
 export const ATTR_LOBEHUB_TOOL_SOURCE = 'lobehub.tool.source' as const;
 
 /** Context engineering metadata. */

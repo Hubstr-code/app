@@ -61,7 +61,7 @@ describe('LobeOpenRouterAI - custom features', () => {
       expect(params.constructorOptions).toBeDefined();
       expect(params.constructorOptions.defaultHeaders).toBeDefined();
       expect(params.constructorOptions.defaultHeaders['HTTP-Referer']).toBe('https://lobehub.com');
-      expect(params.constructorOptions.defaultHeaders['X-Title']).toBe('LobeHub');
+      expect(params.constructorOptions.defaultHeaders['X-Title']).toBe('Hubstr');
     });
 
     it('should have debug configuration', () => {

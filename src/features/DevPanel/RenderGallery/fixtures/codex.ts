@@ -28,7 +28,7 @@ const linearIssueResult = {
   links: [
     {
       title: 'PR #15766: refactor(chat): unify agent run lifecycle',
-      url: 'https://github.com/lobehub/lobehub/pull/15766',
+      url: 'https://github.com/Hubstr-code/app/pull/15766',
     },
   ],
   state: { name: 'In Review' },
@@ -200,14 +200,14 @@ export default defineFixtures({
             url: 'https://example.com/codex-render',
           },
           {
-            snippet: 'How LobeHub maps builtin tool inspectors, renders, and display controls.',
-            title: 'LobeHub builtin tool render registry',
+            snippet: 'How Hubstr maps builtin tool inspectors, renders, and display controls.',
+            title: 'Hubstr builtin tool render registry',
             url: 'https://example.com/lobehub-tools',
           },
         ],
       },
       content:
-        'Search results\n\n1. Codex tool render examples - https://example.com/codex-render\n2. LobeHub builtin tool render registry - https://example.com/lobehub-tools',
+        'Search results\n\n1. Codex tool render examples - https://example.com/codex-render\n2. Hubstr builtin tool render registry - https://example.com/lobehub-tools',
     }),
   },
 });

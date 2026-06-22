@@ -4,29 +4,29 @@ import { parseLobeLink } from './parse';
 
 describe('parseLobeLink', () => {
   it('parses github pull request', () => {
-    expect(parseLobeLink('https://github.com/lobehub/lobehub/pull/15557')).toEqual({
-      canonicalLabel: 'lobehub/lobehub#15557',
+    expect(parseLobeLink('https://github.com/Hubstr-code/app/pull/15557')).toEqual({
+      canonicalLabel: 'Hubstr-code/app#15557',
       kind: 'github',
     });
   });
 
   it('parses github issue', () => {
-    expect(parseLobeLink('https://github.com/lobehub/lobehub/issues/15554')).toEqual({
-      canonicalLabel: 'lobehub/lobehub#15554',
+    expect(parseLobeLink('https://github.com/Hubstr-code/app/issues/15554')).toEqual({
+      canonicalLabel: 'Hubstr-code/app#15554',
       kind: 'github',
     });
   });
 
   it('parses github commit (short sha)', () => {
-    expect(parseLobeLink('https://github.com/lobehub/lobehub/commit/d36aa75701abc')).toEqual({
-      canonicalLabel: 'lobehub/lobehub@d36aa75',
+    expect(parseLobeLink('https://github.com/Hubstr-code/app/commit/d36aa75701abc')).toEqual({
+      canonicalLabel: 'Hubstr-code/app@d36aa75',
       kind: 'github',
     });
   });
 
   it('parses github repo root', () => {
-    expect(parseLobeLink('https://github.com/lobehub/lobehub')).toEqual({
-      canonicalLabel: 'lobehub/lobehub',
+    expect(parseLobeLink('https://github.com/Hubstr-code/app')).toEqual({
+      canonicalLabel: 'Hubstr-code/app',
       kind: 'github',
     });
   });

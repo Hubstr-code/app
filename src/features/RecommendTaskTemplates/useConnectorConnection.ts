@@ -34,10 +34,10 @@ export class ConnectorConnectionPopupBlockedError extends Error {
   }
 }
 
-/** Thrown when connecting a LobeHub connector first needs Market auth. */
+/** Thrown when connecting a Hubstr connector first needs Market auth. */
 export class ConnectorConnectionMarketAuthRequiredError extends Error {
   constructor() {
-    super('Market auth required before connecting LobeHub connector');
+    super('Market auth required before connecting Hubstr connector');
     this.name = 'ConnectorConnectionMarketAuthRequiredError';
   }
 }
@@ -244,7 +244,7 @@ export const useConnectorConnection = (
     [cleanup, startWindowMonitor],
   );
 
-  // Only LobeHub connector OAuth signals completion via postMessage; Composio relies on polling.
+  // Only Hubstr connector OAuth signals completion via postMessage; Composio relies on polling.
   useEffect(() => {
     const handler = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;

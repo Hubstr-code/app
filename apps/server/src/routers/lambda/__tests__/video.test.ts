@@ -10,7 +10,7 @@ const {
   mockAfter,
   mockCreateVideo,
   mockFindUserById,
-  mockIsLobeHubModelAvailable,
+  mockIsHubstrModelAvailable,
   mockProcessBackgroundVideoPolling,
   mockResolveBusinessModelMapping,
   mockServerDB,
@@ -21,14 +21,14 @@ const {
   const mockCreateVideo = vi.fn();
   const mockAfter = vi.fn((cb: () => void) => cb());
   const mockFindUserById = vi.fn();
-  const mockIsLobeHubModelAvailable = vi.fn();
+  const mockIsHubstrModelAvailable = vi.fn();
   const mockProcessBackgroundVideoPolling = vi.fn().mockResolvedValue(undefined);
   const mockResolveBusinessModelMapping = vi.fn();
   return {
     mockAfter,
     mockCreateVideo,
     mockFindUserById,
-    mockIsLobeHubModelAvailable,
+    mockIsHubstrModelAvailable,
     mockProcessBackgroundVideoPolling,
     mockResolveBusinessModelMapping,
     mockServerDB,
@@ -67,13 +67,13 @@ vi.mock('@lobechat/business-model-runtime', async (importOriginal) => ({
     mockResolveBusinessModelMapping(...args),
 }));
 vi.mock('@lobechat/business-model-bank/model-config', () => ({
-  isLobeHubModelAvailable: (
+  isHubstrModelAvailable: (
     ...args: [
       string,
       string,
       { getUserEmail?: () => Promise<string | null | undefined>; userEmail?: string | null }?,
     ]
-  ) => mockIsLobeHubModelAvailable(...args),
+  ) => mockIsHubstrModelAvailable(...args),
 }));
 vi.mock('@/business/server/video-generation/getVideoFreeQuota', () => ({
   getVideoFreeQuota: vi.fn().mockResolvedValue({ remaining: 10 }),
@@ -161,7 +161,7 @@ describe('videoRouter', () => {
       }),
     );
     mockFindUserById.mockResolvedValue({ email: 'user@example.com' });
-    mockIsLobeHubModelAvailable.mockResolvedValue(true);
+    mockIsHubstrModelAvailable.mockResolvedValue(true);
   });
 
   describe('createVideo - async strategy routing', () => {
@@ -198,12 +198,12 @@ describe('videoRouter', () => {
 
       expect(result.success).toBe(true);
       expect(mockResolveBusinessModelMapping).toHaveBeenCalledWith('lobehub', 'onboarding-video');
-      expect(mockIsLobeHubModelAvailable).toHaveBeenCalledWith(
+      expect(mockIsHubstrModelAvailable).toHaveBeenCalledWith(
         'dreamina-seedance-2-0-260128',
         'video',
         { getUserEmail: expect.any(Function) },
       );
-      const availabilityOptions = mockIsLobeHubModelAvailable.mock.calls.at(-1)?.[2];
+      const availabilityOptions = mockIsHubstrModelAvailable.mock.calls.at(-1)?.[2];
       expect(mockFindUserById).not.toHaveBeenCalled();
       await expect(availabilityOptions!.getUserEmail!()).resolves.toBe('user@example.com');
       expect(mockFindUserById).toHaveBeenCalledWith(mockServerDB, mockCtx.userId);
@@ -215,7 +215,7 @@ describe('videoRouter', () => {
 
     it('should reject unavailable lobehub video models before creating async tasks', async () => {
       setupMocks();
-      mockIsLobeHubModelAvailable.mockResolvedValue(false);
+      mockIsHubstrModelAvailable.mockResolvedValue(false);
 
       const caller = videoRouter.createCaller(mockCtx);
 
@@ -227,7 +227,7 @@ describe('videoRouter', () => {
         }),
       ).rejects.toMatchObject({
         code: 'BAD_REQUEST',
-        message: 'LobeHubModelDeprecated',
+        message: 'HubstrModelDeprecated',
       });
 
       expect(mockTransaction).not.toHaveBeenCalled();

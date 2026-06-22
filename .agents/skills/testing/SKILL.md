@@ -4,7 +4,7 @@ description: 'Vitest testing guide. Use when writing or updating tests, fixing f
 user-invocable: false
 ---
 
-# LobeHub Testing Guide
+# Hubstr Testing Guide
 
 ## Quick Reference
 

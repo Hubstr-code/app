@@ -37,7 +37,7 @@ import type { LobeRuntimeAI } from './BaseAI';
 
 const { logger: timing } = createTimingHelpers('lobe-server:chat:lobehub:timing');
 
-const getLobeHubTimingMetadata = (options?: {
+const getHubstrTimingMetadata = (options?: {
   metadata?: Record<string, unknown>;
 }): Record<string, unknown> | undefined =>
   options?.metadata?.provider === 'lobehub' ? options.metadata : undefined;
@@ -169,7 +169,7 @@ export class ModelRuntime {
    * ```
    */
   async chat(payload: ChatStreamPayload, options?: ChatMethodOptions) {
-    const metadata = getLobeHubTimingMetadata(options);
+    const metadata = getHubstrTimingMetadata(options);
     const startedAt = Date.now();
     if (metadata) {
       timing(
@@ -243,7 +243,7 @@ export class ModelRuntime {
     payload: ChatStreamPayload,
     options?: ChatMethodOptions,
   ): Promise<ChatMethodOptions | undefined> {
-    const metadata = getLobeHubTimingMetadata(options);
+    const metadata = getHubstrTimingMetadata(options);
     const beforeChatStartedAt = Date.now();
     if (metadata) {
       timing(

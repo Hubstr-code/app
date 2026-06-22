@@ -44,7 +44,7 @@ const hasThoughtSignature = (
  * Drop citations without a valid url. Some providers (e.g. OpenRouter's built-in
  * web search) emit empty citation objects like `{}`, which would otherwise break
  * downstream rendering (`new URL(undefined)`) and message persistence (Zod requires
- * `url` to be a string). See https://github.com/lobehub/lobehub/issues/15043
+ * `url` to be a string). See https://github.com/Hubstr-code/app/issues/15043
  */
 const filterValidCitations = (citations: ChatCitationItem[]): ChatCitationItem[] =>
   citations.filter((citation) => !!citation?.url);

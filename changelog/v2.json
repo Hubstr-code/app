@@ -24,7 +24,7 @@
         "add Gemini 3.1 Flash-Lite provider cards.",
         "home daily brief with linkable welcome + paired input hint.",
         "add signOperationJwt with 4h expiry for hetero-agent operations.",
-        "migrate Notion to LobeHub Market.",
+        "migrate Notion to Hubstr Market.",
         "Cloud Claude Code V3 — repo picker, GitHub token, sandbox context."
       ],
       "fixes": [

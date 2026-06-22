@@ -599,7 +599,7 @@ export const createOpenAICompatibleRuntime = <T extends Record<string, any> = an
           // Apply sampling sanitization to processedPayload for the custom client path.
           // We use processedPayload (ChatStreamPayload type) here because
           // createChatCompletionStream expects ChatStreamPayload, not the OpenAI SDK format.
-          // Strip LobeHub-internal fields that should never reach downstream APIs.
+          // Strip Hubstr-internal fields that should never reach downstream APIs.
           const {
             apiMode: _apiMode,
             preserveThinking: _preserveThinking,
@@ -621,7 +621,7 @@ export const createOpenAICompatibleRuntime = <T extends Record<string, any> = an
             this,
           ) as any;
         } else {
-          // Remove LobeHub-internal fields before sending to downstream API.
+          // Remove Hubstr-internal fields before sending to downstream API.
           // `preserveThinking` is only consumed by Qwen/Zhipu handlePayload (which runs above)
           // and must not leak to other providers' APIs as an unknown parameter.
           const { apiMode: _, preserveThinking: _pt, ...cleanedPayload } = postPayload as any;

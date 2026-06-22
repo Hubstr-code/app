@@ -48,7 +48,7 @@ export class PluginTypesActionImpl {
   ): Promise<any> => {
     // When the tool call comes from a DB-stored message (e.g. after humanIntervention approval),
     // the `source` field is not persisted and arrives as undefined. Fall back to a live store
-    // lookup so Composio / LobeHub Skill tools still route correctly.
+    // lookup so Composio / Hubstr Skill tools still route correctly.
     let effectiveSource = payload.source;
     if (!effectiveSource) {
       const toolStoreState = useToolStore.getState();

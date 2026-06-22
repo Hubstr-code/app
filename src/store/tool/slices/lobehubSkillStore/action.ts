@@ -21,7 +21,7 @@ import { LobehubSkillStatus } from './types';
 const n = setNamespace('lobehubSkillStore');
 
 /**
- * LobeHub Skill Store Actions
+ * Hubstr Skill Store Actions
  */
 
 type Setter = StoreSetter<ToolStore>;

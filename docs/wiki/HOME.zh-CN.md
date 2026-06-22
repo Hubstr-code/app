@@ -8,4 +8,4 @@
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-我们已将贡献指南迁移至[此页面](https://lobehub.com/zh/docs/development/start)。
+我们已将贡献指南迁移至[此页面](https://hubstr.com/zh/docs/development/start)。

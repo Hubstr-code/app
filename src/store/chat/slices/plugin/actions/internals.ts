@@ -66,7 +66,7 @@ export class PluginInternalsActionImpl {
       }
     }
 
-    // Get all LobeHub Skill tools
+    // Get all Hubstr Skill tools
     const lobehubSkillTools = lobehubSkillStoreSelectors.lobehubSkillAsLobeTools(toolStoreState);
     for (const tool of lobehubSkillTools) {
       if (tool.manifest) {

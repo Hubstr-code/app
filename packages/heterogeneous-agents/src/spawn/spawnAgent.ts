@@ -111,7 +111,7 @@ export interface SpawnAgentHandle {
  * `is_error: "Answer questions?"` tool_result in `-p` mode before the host
  * can surface the questions, so the model falls back to plain-text prompting
  * anyway. Remove this once a local MCP-backed replacement is wired to
- * LobeHub's intervention UI.
+ * Hubstr's intervention UI.
  */
 export const CLAUDE_CODE_BASE_ARGS = [
   '-p',

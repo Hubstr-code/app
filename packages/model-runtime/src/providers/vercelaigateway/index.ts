@@ -80,7 +80,7 @@ export const params = {
   constructorOptions: {
     defaultHeaders: {
       'http-referer': 'https://lobehub.com',
-      'x-title': 'LobeHub',
+      'x-title': 'Hubstr',
     },
   },
   debug: {

@@ -20,9 +20,9 @@ describe('SkillResolver', () => {
       name: 'Agent Browser',
     },
     {
-      description: 'LobeHub management',
+      description: 'Hubstr management',
       identifier: 'lobehub-cli',
-      name: 'LobeHub CLI',
+      name: 'Hubstr CLI',
     },
   ];
 

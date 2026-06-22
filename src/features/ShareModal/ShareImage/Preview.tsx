@@ -16,6 +16,7 @@ import ChatList from './ChatList';
 import { styles } from './style';
 import { type FieldType } from './type';
 import { WidthMode } from './type';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 interface PreviewProps extends FieldType {
   context: ConversationContext;
@@ -78,7 +79,7 @@ const Preview = memo<PreviewProps>(
     });
 
     const displayTitle =
-      (isHeaderInbox ?? isInbox) ? 'Lobe AI' : headerMeta?.title || title || currentTitle;
+      (isHeaderInbox ?? isInbox) ? DEFAULT_INBOX_TITLE : headerMeta?.title || title || currentTitle;
     const displayAvatar = headerMeta?.avatar || currentAvatar;
     const displayBackgroundColor = headerMeta?.backgroundColor || currentBackgroundColor;
     const displayModel = headerModel || currentModel;

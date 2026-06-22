@@ -1,14 +1,14 @@
 ---
 name: cli
-description: LobeHub CLI (@lobehub/cli) development guide — commands, subcommands, architecture.
+description: Hubstr CLI (@lobehub/cli) development guide — commands, subcommands, architecture.
 disable-model-invocation: true
 ---
 
-# LobeHub CLI Development Guide
+# Hubstr CLI Development Guide
 
 ## Overview
 
-LobeHub CLI (`@lobehub/cli`) is a command-line tool for managing and interacting with LobeHub services. Built with Commander.js + TypeScript.
+Hubstr CLI (`@lobehub/cli`) is a command-line tool for managing and interacting with Hubstr services. Built with Commander.js + TypeScript.
 
 - **Package**: `apps/cli/`
 - **Entry**: `apps/cli/src/index.ts`
@@ -260,7 +260,7 @@ cd apps/cli && bun run dev -- agent list
 # Dev mode (local server) — uses .lobehub-dev/
 cd apps/cli && bun run dev -- <command>
 
-# Production (app.lobehub.com) — uses ~/.lobehub/
+# Production (app.hubstr.com) — uses ~/.lobehub/
 lh <command>
 ```
 

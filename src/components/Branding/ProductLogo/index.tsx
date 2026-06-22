@@ -1,14 +1,14 @@
 'use client';
 
-import { type LobeHubProps } from '@lobehub/ui/brand';
-import { LobeHub } from '@lobehub/ui/brand';
+import { type HubstrProps } from '@lobehub/ui/brand';
+import { Hubstr } from '@lobehub/ui/brand';
 import { memo } from 'react';
 
 import { isCustomBranding } from '@/const/version';
 
 import CustomLogo from './Custom';
 
-interface ProductLogoProps extends LobeHubProps {
+interface ProductLogoProps extends HubstrProps {
   height?: number;
   width?: number;
 }
@@ -18,5 +18,5 @@ export const ProductLogo = memo<ProductLogoProps>((props) => {
     return <CustomLogo {...props} />;
   }
 
-  return <LobeHub {...props} />;
+  return <Hubstr {...props} />;
 });

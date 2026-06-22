@@ -1,18 +1,18 @@
 ---
 name: ux
-description: 'LobeHub product design values / principles / checklists. Load this skill whenever the work touches user-interface features or implementation — designing or building any user-facing flow — to get better UX results.'
+description: 'Hubstr product design values / principles / checklists. Load this skill whenever the work touches user-interface features or implementation — designing or building any user-facing flow — to get better UX results.'
 user-invocable: false
 ---
 
 # UX — Design Values & Execution Checklists
 
-How LobeHub products should feel, and concrete rules to get there. Use this when
+How Hubstr products should feel, and concrete rules to get there. Use this when
 **building or reviewing** any user-facing flow. For component/styling choices see
 **react**, for wording see **microcopy**, for imperative modal wiring see **modal**.
 
 ## Design values
 
-LobeHub follows four product design values — **Natural・Meaningful・Certainty・
+Hubstr follows four product design values — **Natural・Meaningful・Certainty・
 Growth**. Read them before designing:
 **[references/design-values.md](references/design-values.md)** (definitions +
 conflict priority).
@@ -99,7 +99,7 @@ the selection is restored rather than freshly clicked.
 
 - [ ] **Pickers list every valid target.** Watch for options dropped by backend
       list queries (pagination, `virtual` flags, scope filters) and add them back.
-      ✅ The default "LobeAI" (inbox) agent is `virtual` and excluded from the
+      ✅ The default "Hubstr AI" (inbox) agent is `virtual` and excluded from the
       sidebar list, so the move picker re-adds it. An empty picker must mean
       "genuinely none", never "we filtered out the only option". _(Meaningful)_
 

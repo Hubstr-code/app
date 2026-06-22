@@ -182,7 +182,7 @@ describe('ImessageBridgeService', () => {
     await service.stop();
   });
 
-  it('receives BlueBubbles webhook locally and forwards the enriched event to LobeHub', async () => {
+  it('receives BlueBubbles webhook locally and forwards the enriched event to Hubstr', async () => {
     const { service } = createService();
     await service.upsertConfig(config);
 

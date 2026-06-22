@@ -1,6 +1,6 @@
 # E2E Testing Guide for Claude
 
-本文档记录了在 LobeHub E2E 测试开发中的经验和最佳实践。
+本文档记录了在 Hubstr E2E 测试开发中的经验和最佳实践。
 
 Related: [LOBE-2417](https://linear.app/lobehub/issue/LOBE-2417/建立核心产品功能-e2e-测试体验基准线)
 
@@ -178,7 +178,7 @@ LLM Mock 通过 Playwright 的 `page.route()` 拦截对 `/webapi/chat/openai` �
 
 ### SSE 响应格式
 
-LobeHub 使用特定的 SSE 格式，必须严格匹配：
+Hubstr 使用特定的 SSE 格式，必须严格匹配：
 
 ```typescript
 // 1. 初始 data 事件
@@ -225,7 +225,7 @@ await llmMockManager.setup(this.page);
 
 ```typescript
 // 为特定用户消息设置响应
-llmMockManager.setResponse('你好', '你好！我是 Lobe AI，有什么可以帮助你的？');
+llmMockManager.setResponse('你好', '你好！我是 Hubstr AI，有什么可以帮助你的？');
 
 // 清除所有自定义响应
 llmMockManager.clearResponses();
@@ -235,7 +235,7 @@ llmMockManager.clearResponses();
 
 ### 富文本编辑器 (contenteditable) 输入
 
-LobeHub 使用 `@lobehub/editor` 作为聊天输入框，是一个 contenteditable 的富文本编辑器。
+Hubstr 使用 `@lobehub/editor` 作为聊天输入框，是一个 contenteditable 的富文本编辑器。
 
 **关键点**:
 

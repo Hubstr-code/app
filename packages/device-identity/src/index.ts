@@ -4,7 +4,7 @@ import { machineIdSync } from 'node-machine-id';
 
 /**
  * Constant mixed into the deviceId hash. Not a secret — it only ensures the
- * hash input is namespaced to LobeHub so the same machine id used elsewhere
+ * hash input is namespaced to Hubstr so the same machine id used elsewhere
  * can't produce a colliding value.
  */
 const SALT = 'lobehub-device-salt';
@@ -34,7 +34,7 @@ export interface DeriveDeviceIdOptions {
 /**
  * Derive a stable deviceId for `(machine, user)`.
  *
- * Same machine + same user → same id (survives LobeHub reinstall, since the
+ * Same machine + same user → same id (survives Hubstr reinstall, since the
  * machine id is OS-level). Same machine + different user → different id, so the
  * server can't correlate accounts on one machine. When the machine id can't be
  * read, falls back to `fallbackId` (or a fresh random UUID) and flags the

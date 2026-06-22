@@ -916,7 +916,7 @@ export const createRuntimeExecutors = (
         );
         const modelKnowledgeCutoff =
           modelCard?.knowledgeCutoff ??
-          (provider === ModelProvider.LobeHub ? canonicalModelCard?.knowledgeCutoff : undefined);
+          (provider === ModelProvider.Hubstr ? canonicalModelCard?.knowledgeCutoff : undefined);
 
         let modelExtendParams = readExtendParams(modelCard);
 

@@ -11,6 +11,7 @@ import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 
 import ListItem from '../ListItem';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 const Inbox = memo(() => {
   const mobile = useServerConfigStore((s) => s.isMobile);
@@ -20,7 +21,7 @@ const Inbox = memo(() => {
 
   return (
     <Link
-      aria-label={'Lobe AI'}
+      aria-label={DEFAULT_INBOX_TITLE}
       to={SESSION_CHAT_URL(inboxAgentId, mobile)}
       onClick={(e) => {
         e.preventDefault();
@@ -31,7 +32,7 @@ const Inbox = memo(() => {
         active={isInboxActive}
         avatar={DEFAULT_INBOX_AVATAR}
         key={'inbox'}
-        title={'Lobe AI'}
+        title={DEFAULT_INBOX_TITLE}
         styles={{
           container: {
             gap: 12,

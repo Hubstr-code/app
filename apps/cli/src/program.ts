@@ -44,7 +44,7 @@ export function createProgram() {
 
   program
     .name('lh')
-    .description('LobeHub CLI - manage and connect to LobeHub services')
+    .description('Hubstr CLI - manage and connect to Hubstr services')
     .version(version);
 
   registerLoginCommand(program);

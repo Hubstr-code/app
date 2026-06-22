@@ -1,6 +1,6 @@
 # @lobehub/cli
 
-LobeHub command-line interface.
+Hubstr command-line interface.
 
 ## Local Development
 
@@ -17,7 +17,7 @@ LobeHub command-line interface.
 
 ## Custom Server URL
 
-By default the CLI connects to `https://app.lobehub.com`. To point it at a different server (e.g. a local instance):
+By default the CLI connects to `https://app.hubstr.com`. To point it at a different server (e.g. a local instance):
 
 | Method               | Command                                                         | Persistence                         |
 | -------------------- | --------------------------------------------------------------- | ----------------------------------- |

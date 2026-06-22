@@ -12,7 +12,7 @@ const linearIssueResult = {
   links: [
     {
       title: 'PR #15766: refactor(chat): unify agent run lifecycle',
-      url: 'https://github.com/lobehub/lobehub/pull/15766',
+      url: 'https://github.com/Hubstr-code/app/pull/15766',
     },
   ],
   state: { name: 'In Review' },

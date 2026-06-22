@@ -1,7 +1,7 @@
 ---
 name: agent-testing
 description: >
-  Agentic end-to-end testing for LobeHub: backend verification via the CLI,
+  Agentic end-to-end testing for Hubstr: backend verification via the CLI,
   frontend verification via agent-browser (Electron), full-stack verification in
   the browser, and bot-channel verification via osascript. Local-first today,
   designed to extend to cloud automation. Triggers on 'cli test', 'test with cli',
@@ -182,7 +182,7 @@ Default script env:
 - Managed DB container: `lobehub-agent-testing-postgres`
 - Managed Redis container: `lobehub-agent-testing-redis`
 
-`seed-user` creates `agent-testing@lobehub.com` / `TestPassword123!` with
+`seed-user` creates `agent-testing@hubstr.com` / `TestPassword123!` with
 onboarding already completed, plus a local API key in
 `.records/env/agent-testing-cli.env` for CLI automation. When running Cucumber
 against this dev server, pass the same script env into the test process too;
@@ -303,7 +303,7 @@ All under `.agents/skills/agent-testing/scripts/`:
 | `test-env.sh`             | Print/export the resolved local test env and ports                           |
 | `setup-auth.sh`           | One-stop auth setup & status check (`status` / `cli` / `web`)                |
 | `init-dev-env.sh`         | Self-contained local dev env (`setup-db` / `seed-user` / `dev-next` / `dev`) |
-| `app-probe.sh`            | LobeHub app probes: `auth` / `route` / `ops` / `goto <path>` / `errors`      |
+| `app-probe.sh`            | Hubstr app probes: `auth` / `route` / `ops` / `goto <path>` / `errors`      |
 | `record-gif.sh`           | Frame-sequence → GIF for time-based behavior (streaming, timers, animations) |
 | `report-init.sh`          | Scaffold a structured test report (Step 3)                                   |
 | `electron-dev.sh`         | Manage Electron dev env (start/stop/status/restart, CDP 9222)                |
@@ -312,7 +312,7 @@ All under `.agents/skills/agent-testing/scripts/`:
 | `record-electron-demo.sh` | Record Electron app demo with ffmpeg                                         |
 | `agent-gateway/`          | Gateway probe / dump / analyze tools                                         |
 
-`app-probe.sh` is the LobeHub-specific fast path into app state — auth check,
+`app-probe.sh` is the Hubstr-specific fast path into app state — auth check,
 current route, running operations, and `goto <path>` quick navigation
 (`/agent/<agentId>/<topicId>`, `/task/<taskId>`, `/settings`, …) so a test can
 jump straight to the state under test instead of clicking through the UI. See
@@ -365,7 +365,7 @@ Two hard rules worth front-loading:
 ```
 agent-testing/
 ├── SKILL.md            # this router
-├── cli/index.md        # backend verification via the LobeHub CLI
+├── cli/index.md        # backend verification via the Hubstr CLI
 ├── ui/electron.md      # pure-frontend verification in the desktop app
 ├── ui/web.md           # full-stack verification in the browser
 ├── bot/<platform>/     # bot-channel verification (osascript / bridge)

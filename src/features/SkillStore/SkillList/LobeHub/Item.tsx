@@ -127,6 +127,6 @@ const Item = memo<ItemProps>(
   },
 );
 
-Item.displayName = 'LobeHubListItem';
+Item.displayName = 'HubstrListItem';
 
 export default Item;

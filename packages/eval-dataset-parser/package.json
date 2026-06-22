@@ -9,17 +9,17 @@
     "csv",
     "xlsx",
     "jsonl",
-    "lobehub"
+    "hubstr"
   ],
-  "homepage": "https://github.com/lobehub/lobehub/tree/master/packages/eval-dataset-parser",
+  "homepage": "https://github.com/Hubstr-code/app/tree/master/packages/eval-dataset-parser",
   "bugs": {
-    "url": "https://github.com/lobehub/lobehub/issues/new"
+    "url": "https://github.com/Hubstr-code/app/issues/new"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lobehub/lobehub.git"
+    "url": "https://github.com/Hubstr-code/app.git"
   },
-  "author": "LobeHub <i@lobehub.com>",
+  "author": "Hubstr <hello@hubstr.com>",
   "sideEffects": false,
   "main": "./src/index.ts",
   "scripts": {

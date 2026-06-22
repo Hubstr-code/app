@@ -302,7 +302,7 @@ const ErrorMessageExtra = memo<ErrorExtraProps>(({ error: alertError, data, onRe
       break;
     }
 
-    case ChatErrorType.LobeHubModelDeprecated: {
+    case ChatErrorType.HubstrModelDeprecated: {
       if (enableBusinessFeatures)
         return <DeprecatedModelError requestedModel={error?.body?.requestedModel} />;
       break;

@@ -63,7 +63,7 @@ describe('useConnectorConnection', () => {
     vi.restoreAllMocks();
   });
 
-  it('asks the user to sign in to Market before requesting LobeHub connector OAuth', async () => {
+  it('asks the user to sign in to Market before requesting Hubstr connector OAuth', async () => {
     const { result } = renderHook(() => useConnectorConnection([lobehubSpec]));
 
     let error: unknown;

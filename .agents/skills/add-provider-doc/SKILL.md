@@ -81,8 +81,8 @@ Update all Dockerfiles at the **end** of ENV section:
 
 - Cover image
 - 3-4 API dashboard screenshots
-- 2-3 LobeHub configuration screenshots
-- Host on LobeHub CDN: `hub-apac-1.lobeobjects.space`
+- 2-3 Hubstr configuration screenshots
+- Host on Hubstr CDN: `hub-apac-1.lobeobjects.space`
 
 ## Checklist
 

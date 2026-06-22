@@ -17,6 +17,7 @@ import { useAgentStore } from '@/store/agent';
 import { agentSelectors, builtinAgentSelectors } from '@/store/agent/selectors';
 import { ChatSettingsTabs } from '@/store/global/initialState';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 const Content = memo(() => {
   const { t } = useTranslation('setting');
@@ -86,7 +87,7 @@ const Content = memo(() => {
     [availableTabs, t],
   );
 
-  const displayTitle = isInbox ? 'Lobe AI' : meta.title || t('defaultSession', { ns: 'common' });
+  const displayTitle = isInbox ? DEFAULT_INBOX_TITLE : meta.title || t('defaultSession', { ns: 'common' });
 
   return (
     <Flexbox

@@ -3,6 +3,6 @@ import { lobehubRouterRuntimeOptions } from '@lobechat/business-model-runtime';
 import { createRouterRuntime } from '../../core/RouterRuntime';
 import type { CreateRouterRuntimeOptions } from '../../core/RouterRuntime/createRuntime';
 
-export const LobeHubAI = createRouterRuntime(
+export const HubstrAI = createRouterRuntime(
   lobehubRouterRuntimeOptions as CreateRouterRuntimeOptions,
 );

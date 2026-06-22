@@ -25,7 +25,7 @@ const styles = createStaticStyles(({ css }) => ({
 const ChatWithModel = memo(() => {
   const { t } = useTranslation('discover');
   const { providers = [] } = useDetailContext();
-  const includeLobeHub = providers.some((item) => item.id === 'lobehub');
+  const includeHubstr = providers.some((item) => item.id === 'lobehub');
   const navigate = useWorkspaceAwareNavigate();
   const list = providers.filter((provider) => provider.id !== 'lobehub');
 
@@ -39,11 +39,11 @@ const ChatWithModel = memo(() => {
     ),
   }));
 
-  const handleLobeHubChat = () => {
+  const handleHubstrChat = () => {
     navigate('/agent');
   };
 
-  if (includeLobeHub)
+  if (includeHubstr)
     return (
       <Dropdown.Button
         className={styles.button}
@@ -55,7 +55,7 @@ const ChatWithModel = memo(() => {
         menu={{
           items,
         }}
-        onClick={handleLobeHubChat}
+        onClick={handleHubstrChat}
       >
         {t('models.chat')}
       </Dropdown.Button>

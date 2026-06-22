@@ -67,7 +67,7 @@ describe('MarkdownImage', () => {
     });
   });
 
-  it('renders remote markdown images with the LobeHub Image component', () => {
+  it('renders remote markdown images with the Hubstr Image component', () => {
     mockUseClientDataSWR.mockReturnValue({});
 
     render(
@@ -97,7 +97,7 @@ describe('MarkdownImage', () => {
     });
   });
 
-  it('resolves relative markdown images and renders the loaded blob through LobeHub Image', () => {
+  it('resolves relative markdown images and renders the loaded blob through Hubstr Image', () => {
     mockUseClientDataSWR.mockReturnValue({
       data: {
         blob: new Blob(['image']),

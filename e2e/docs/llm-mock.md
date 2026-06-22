@@ -6,7 +6,7 @@ LLM Mock 通过 Playwright 的 `page.route()` 拦截对 `/webapi/chat/openai` �
 
 ## SSE 响应格式
 
-LobeHub 使用特定的 SSE 格式，必须严格匹配：
+Hubstr 使用特定的 SSE 格式，必须严格匹配：
 
 ```
 // 1. 初始 data 事件
@@ -53,7 +53,7 @@ await llmMockManager.setup(this.page);
 
 ```typescript
 // 为特定用户消息设置响应
-llmMockManager.setResponse('你好', '你好！我是 Lobe AI，有什么可以帮助你的？');
+llmMockManager.setResponse('你好', '你好！我是 Hubstr AI，有什么可以帮助你的？');
 
 // 清除所有自定义响应
 llmMockManager.clearResponses();

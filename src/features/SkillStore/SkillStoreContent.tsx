@@ -7,29 +7,29 @@ import { useTranslation } from 'react-i18next';
 
 import Search from './Search';
 import AddSkillButton from './SkillList/AddSkillButton';
-import LobeHubList from './SkillList/LobeHub';
+import HubstrList from './SkillList/Hubstr';
 import MarketSkillList from './SkillList/MarketSkills';
 import MCPList from './SkillList/MCP';
 
 export enum SkillStoreTab {
-  LobeHub = 'lobehub',
+  Hubstr = 'lobehub',
   MCP = 'mcp',
   Skills = 'skills',
 }
 
 export const SkillStoreContent = () => {
   const { t } = useTranslation('setting');
-  const [activeTab, setActiveTab] = useState<SkillStoreTab>(SkillStoreTab.LobeHub);
+  const [activeTab, setActiveTab] = useState<SkillStoreTab>(SkillStoreTab.Hubstr);
   const [lobehubKeywords, setLobehubKeywords] = useState('');
   const [skillKeywords, setSkillKeywords] = useState('');
 
   const options: SegmentedOptions = [
-    { label: t('skillStore.tabs.lobehub'), value: SkillStoreTab.LobeHub },
+    { label: t('skillStore.tabs.lobehub'), value: SkillStoreTab.Hubstr },
     { label: t('skillStore.tabs.skills'), value: SkillStoreTab.Skills },
     { label: t('skillStore.tabs.mcp'), value: SkillStoreTab.MCP },
   ];
 
-  const isLobeHub = activeTab === SkillStoreTab.LobeHub;
+  const isHubstr = activeTab === SkillStoreTab.Hubstr;
   const isSkills = activeTab === SkillStoreTab.Skills;
   const isMCP = activeTab === SkillStoreTab.MCP;
 
@@ -49,13 +49,13 @@ export const SkillStoreContent = () => {
         </Flexbox>
         <Search
           activeTab={activeTab}
-          onLobeHubSearch={setLobehubKeywords}
+          onHubstrSearch={setLobehubKeywords}
           onSkillSearch={setSkillKeywords}
         />
       </Flexbox>
       <Flexbox height={496} style={{ marginBlockEnd: -12, marginInline: -16 }}>
-        <Flexbox flex={1} style={{ display: isLobeHub ? 'flex' : 'none', overflow: 'auto' }}>
-          <LobeHubList keywords={lobehubKeywords} />
+        <Flexbox flex={1} style={{ display: isHubstr ? 'flex' : 'none', overflow: 'auto' }}>
+          <HubstrList keywords={lobehubKeywords} />
         </Flexbox>
         <Flexbox flex={1} style={{ display: isSkills ? 'flex' : 'none', overflow: 'auto' }}>
           <MarketSkillList keywords={skillKeywords} />

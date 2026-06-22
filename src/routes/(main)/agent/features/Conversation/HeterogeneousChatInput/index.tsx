@@ -25,7 +25,7 @@ import { useChatStore } from '@/store/chat';
 import HeteroControlBar from './HeteroControlBar';
 
 // Heterogeneous agents (e.g. Claude Code) bring their own toolchain, memory,
-// and model, so LobeHub-side pickers don't apply. Typo is kept so the user
+// and model, so Hubstr-side pickers don't apply. Typo is kept so the user
 // can still toggle the rich-text formatting bar.
 const leftActions: ActionKeys[] = ['typo'];
 const rightActions: ActionKeys[] = [];

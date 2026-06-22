@@ -25,7 +25,7 @@ import { gridStyles } from '../style';
 import WantMoreSkills from '../WantMoreSkills';
 import Item from './Item';
 
-interface LobeHubListProps {
+interface HubstrListProps {
   keywords: string;
 }
 
@@ -34,14 +34,14 @@ const getBuiltinToolsOnly = (s: ToolStoreState): LobeToolMeta[] => {
   return s.builtinTools
     .filter((item) => !item.hidden)
     .map((t) => ({
-      author: 'LobeHub',
+      author: 'Hubstr',
       identifier: t.identifier,
       meta: t.manifest.meta,
       type: 'builtin' as const,
     }));
 };
 
-export const LobeHubList = memo<LobeHubListProps>(({ keywords }) => {
+export const HubstrList = memo<HubstrListProps>(({ keywords }) => {
   const { t } = useTranslation('setting');
   const isLobehubSkillEnabled = useServerConfigStore(serverConfigSelectors.enableLobehubSkill);
   const isComposioEnabled = useServerConfigStore(serverConfigSelectors.enableComposio);
@@ -91,7 +91,7 @@ export const LobeHubList = memo<LobeHubListProps>(({ keywords }) => {
       items.push({ tool, type: 'builtin' });
     }
 
-    // Add LobeHub skills
+    // Add Hubstr skills
     if (isLobehubSkillEnabled) {
       for (const provider of LOBEHUB_SKILL_PROVIDERS) {
         items.push({ provider, type: 'lobehub' });
@@ -216,6 +216,6 @@ export const LobeHubList = memo<LobeHubListProps>(({ keywords }) => {
   );
 });
 
-LobeHubList.displayName = 'LobeHubList';
+HubstrList.displayName = 'HubstrList';
 
-export default LobeHubList;
+export default HubstrList;

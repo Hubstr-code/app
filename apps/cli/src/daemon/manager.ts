@@ -71,7 +71,7 @@ export function isProcessAlive(pid: number): boolean {
 }
 
 /**
- * Verify a live PID actually belongs to a LobeHub connect daemon.
+ * Verify a live PID actually belongs to a Hubstr connect daemon.
  *
  * A bare `isProcessAlive` check is not enough: if a daemon dies without cleaning
  * up `daemon.pid` (crash, `kill -9`, reboot), the OS can later reuse that PID

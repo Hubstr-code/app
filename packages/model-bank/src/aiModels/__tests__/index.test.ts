@@ -19,7 +19,7 @@ describe('loadModels', () => {
 
     const models = await loadModels({
       providerLoaders: {
-        [ModelProvider.LobeHub]: loader,
+        [ModelProvider.Hubstr]: loader,
       },
     });
 
@@ -29,7 +29,7 @@ describe('loadModels', () => {
         expect.objectContaining({
           enabled: true,
           id: 'injected-lobehub-model',
-          providerId: ModelProvider.LobeHub,
+          providerId: ModelProvider.Hubstr,
           source: 'builtin',
           type: 'chat',
         }),
@@ -41,7 +41,7 @@ describe('loadModels', () => {
     await expect(
       loadModels({
         providerLoaders: {
-          [ModelProvider.LobeHub]: undefined,
+          [ModelProvider.Hubstr]: undefined,
         },
       }),
     ).resolves.toBe(LOBE_DEFAULT_MODEL_LIST);
@@ -53,7 +53,7 @@ describe('loadModels', () => {
     await expect(
       loadModels({
         providerLoaders: {
-          [ModelProvider.LobeHub]: loader,
+          [ModelProvider.Hubstr]: loader,
         },
       }),
     ).rejects.toThrow('model config missing');
@@ -91,10 +91,10 @@ describe('knowledgeCutoff backfill', () => {
     ]);
 
     const models = await loadModels({
-      providerLoaders: { [ModelProvider.LobeHub]: loader },
+      providerLoaders: { [ModelProvider.Hubstr]: loader },
     });
 
-    const lobehubModels = models.filter((m) => m.providerId === ModelProvider.LobeHub);
+    const lobehubModels = models.filter((m) => m.providerId === ModelProvider.Hubstr);
     expect(lobehubModels.find((m) => m.id === 'gpt-5')?.knowledgeCutoff).toBe('2020-01');
     expect(lobehubModels.find((m) => m.id === 'gpt-5-mini')?.knowledgeCutoff).toBe('2024-05');
   });

@@ -7,7 +7,7 @@ import { Loader2, Plus, SquareArrowOutUpRight } from 'lucide-react';
 import { memo, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useSkillConnect } from '@/features/SkillStore/SkillList/LobeHub/useSkillConnect';
+import { useSkillConnect } from '@/features/SkillStore/SkillList/Hubstr/useSkillConnect';
 import { usePermission } from '@/hooks/usePermission';
 import { useToolStore } from '@/store/tool';
 import { builtinToolSelectors } from '@/store/tool/selectors';
@@ -113,7 +113,7 @@ const Header = memo<HeaderProps>(({ type }) => {
       );
     }
 
-    // Handle Composio/LobeHub skills
+    // Handle Composio/Hubstr skills
     if (isConnected) return null;
 
     if (isConnecting) {

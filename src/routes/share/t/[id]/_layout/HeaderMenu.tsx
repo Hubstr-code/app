@@ -33,7 +33,7 @@ const HeaderMenu = memo(() => {
         key: 'go-to-lobehub',
         label: (
           <a href={OFFICIAL_SITE} rel="noopener noreferrer" target="_blank">
-            {t('sharePage.menu.goToLobeHub')}
+            {t('sharePage.menu.goToHubstr')}
           </a>
         ),
       },

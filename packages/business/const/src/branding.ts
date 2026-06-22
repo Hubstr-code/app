@@ -2,12 +2,15 @@
 // if you want to use it in the commercial usage
 // please contact us for more information: hello@lobehub.com
 
-export const LOBE_CHAT_CLOUD = 'LobeHub Cloud';
+export const LOBE_CHAT_CLOUD = 'Hubstr Cloud';
 
-export const BRANDING_NAME = 'LobeHub';
+export const BRANDING_NAME = 'Hubstr';
 export const BRANDING_LOGO_URL = '';
 
-export const ORG_NAME = 'LobeHub';
+export const ORG_NAME = 'Hubstr';
+
+/** Default built-in inbox agent display name (e.g. sidebar, share cards). */
+export const DEFAULT_INBOX_AGENT_NAME = 'Hubstr AI';
 
 export const BRANDING_URL = {
   help: undefined,

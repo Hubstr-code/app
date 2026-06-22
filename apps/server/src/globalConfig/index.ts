@@ -91,7 +91,7 @@ export const getServerGlobalConfig = async () => {
     for (const provider of Object.values(ModelProvider)) {
       aiProviderSpecificConfig[provider] = {
         ...aiProviderSpecificConfig[provider],
-        enabled: provider === ModelProvider.LobeHub,
+        enabled: provider === ModelProvider.Hubstr,
       };
     }
   }

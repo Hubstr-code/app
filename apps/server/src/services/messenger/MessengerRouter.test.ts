@@ -567,7 +567,7 @@ describe('MessengerRouter member_joined_channel welcome', () => {
     expect(mockSetIfNotExists).toHaveBeenCalledWith('channel_welcomed:C_GENERAL', '1');
     expect(mockSlackBinder.sendDmText).toHaveBeenCalledTimes(1);
     expect(mockSlackBinder.sendDmText.mock.calls[0][0]).toBe('C_GENERAL');
-    expect(mockSlackBinder.sendDmText.mock.calls[0][1]).toMatch(/LobeHub/);
+    expect(mockSlackBinder.sendDmText.mock.calls[0][1]).toMatch(/Hubstr/);
   });
 
   it('does nothing when a regular user (not the bot) joins the channel', async () => {
@@ -1115,9 +1115,9 @@ describe('MessengerRouter /switch', () => {
     mockListUserWorkspaces.mockResolvedValue([
       { id: 'workspace-1', name: 'Workspace 1', role: 'owner' },
     ]);
-    // `fetchUserAgents` pins the inbox/LobeAI first; the switch lands on it.
+    // `fetchUserAgents` pins the inbox/Hubstr AI first; the switch lands on it.
     vi.spyOn(MessengerRouter.prototype as any, 'fetchUserAgents').mockResolvedValue([
-      { id: 'agt_inbox', title: 'LobeAI' },
+      { id: 'agt_inbox', title: 'Hubstr AI' },
     ]);
 
     const router = new MessengerRouter();

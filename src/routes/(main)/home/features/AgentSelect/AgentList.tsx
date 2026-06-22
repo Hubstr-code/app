@@ -12,6 +12,7 @@ import { useAgentStore } from '@/store/agent';
 import { agentSelectors, builtinAgentSelectors } from '@/store/agent/selectors';
 import { useHomeStore } from '@/store/home';
 import { homeAgentListSelectors } from '@/store/home/selectors';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 const styles = createStaticStyles(({ css, cssVar }) => ({
   active: css`
@@ -65,7 +66,7 @@ const AgentList = memo<AgentListProps>(({ activeAgentId, onSelect }) => {
           DEFAULT_INBOX_AVATAR,
         backgroundColor: inboxMeta?.backgroundColor || undefined,
         id: inboxAgentId,
-        title: inboxMeta?.title || 'Lobe AI',
+        title: inboxMeta?.title || DEFAULT_INBOX_TITLE,
       });
       seen.add(inboxAgentId);
     }

@@ -60,7 +60,7 @@ vi.mock('@/routes/(main)/home/_layout/hooks/useCreateModal', () => ({
           View in Skills
         </button>
         <button type="button" onClick={() => void onTryInLobeAI?.()}>
-          Use in LobeAI
+          Use in Hubstr AI
         </button>
         <span>Inbox name: {inboxAgentName}</span>
       </>
@@ -185,11 +185,11 @@ describe('AgentModalProvider', () => {
     );
   });
 
-  it('navigates to LobeAI without sending the original create-agent prompt', async () => {
+  it('navigates to Hubstr AI without sending the original create-agent prompt', async () => {
     renderProvider();
 
     fireEvent.click(screen.getByText('Open create agent modal'));
-    fireEvent.click(screen.getByText('Use in LobeAI'));
+    fireEvent.click(screen.getByText('Use in Hubstr AI'));
 
     expect(mocks.sendMessage).not.toHaveBeenCalled();
     expect(mocks.navigate).toHaveBeenCalledWith('/agent/inbox-agent');

@@ -99,7 +99,7 @@ const AgentTool = memo<AgentToolProps>(
     const allComposioServers = useToolStore(composioStoreSelectors.getServers, isEqual);
     const isComposioEnabledInEnv = useServerConfigStore(serverConfigSelectors.enableComposio);
 
-    // LobeHub Skill-related state
+    // Hubstr Skill-related state
     const allLobehubSkillServers = useToolStore(lobehubSkillStoreSelectors.getServers, isEqual);
     const isLobehubSkillEnabled = useServerConfigStore(serverConfigSelectors.enableLobehubSkill);
 
@@ -134,7 +134,7 @@ const AgentTool = memo<AgentToolProps>(
     // Load user's Composio integrations via SWR (from database)
     useFetchUserComposioConnections(isComposioEnabledInEnv);
 
-    // Load user's LobeHub Skill connections via SWR
+    // Load user's Hubstr Skill connections via SWR
     useFetchLobehubSkillConnections(isLobehubSkillEnabled);
 
     // Toggle web browsing via searchMode - use byId action
@@ -279,7 +279,7 @@ const AgentTool = memo<AgentToolProps>(
       [isComposioEnabledInEnv, allComposioServers, effectiveAgentId, t],
     );
 
-    // LobeHub Skill Provider list items
+    // Hubstr Skill Provider list items
     const lobehubSkillItems = useMemo(
       () =>
         isLobehubSkillEnabled
@@ -334,7 +334,7 @@ const AgentTool = memo<AgentToolProps>(
         }
       };
 
-    // Builtin Agent Skills list items (grouped under LobeHub)
+    // Builtin Agent Skills list items (grouped under Hubstr)
     const builtinAgentSkillItems = useMemo(
       () =>
         installedBuiltinSkills.map((skill) => ({
@@ -450,7 +450,7 @@ const AgentTool = memo<AgentToolProps>(
       [userAgentSkills, isToolEnabled, handleToggleTool, t],
     );
 
-    // Merge Builtin Agent Skills, builtin tools, LobeHub Skill Providers, and Composio servers
+    // Merge Builtin Agent Skills, builtin tools, Hubstr Skill Providers, and Composio servers
     const builtinItems = useMemo(
       () => [
         // 1. Builtin Agent Skills
@@ -497,7 +497,7 @@ const AgentTool = memo<AgentToolProps>(
             />
           ),
         })),
-        // 3. LobeHub Skill Providers
+        // 3. Hubstr Skill Providers
         ...lobehubSkillItems,
         // 4. Composio servers
         ...composioServerItems,
@@ -593,7 +593,7 @@ const AgentTool = memo<AgentToolProps>(
     // All tab items (marketplace tab)
     const allTabItems: ItemType[] = useMemo(
       () => [
-        // LobeHub group
+        // Hubstr group
         ...(builtinItems.length > 0
           ? [
               {
@@ -661,7 +661,7 @@ const AgentTool = memo<AgentToolProps>(
         for (const type of COMPOSIO_APP_TYPES) all.add(type.identifier);
       }
 
-      // 4. LobeHub Skill providers (if enabled)
+      // 4. Hubstr Skill providers (if enabled)
       if (isLobehubSkillEnabled) {
         for (const provider of LOBEHUB_SKILL_PROVIDERS) all.add(provider.id);
       }

@@ -1,7 +1,7 @@
 ---
-title: LobeHub Upstream Sync and Docker Deployment Guide
+title: Hubstr Upstream Sync and Docker Deployment Guide
 description: >-
-  Learn how to enable automatic updates for LobeHub Vercel deployments and
+  Learn how to enable automatic updates for Hubstr Vercel deployments and
   upgrade Docker deployment versions easily. Follow step-by-step instructions
   for a seamless deployment process.
 tags:
@@ -42,36 +42,36 @@ If you encounter a sync failure, you need to manually click "Update Branch" once
 
 ## `B` Docker Deployment
 
-Upgrading the Docker deployment version is very simple, you just need to redeploy the latest LobeHub image. Here are the commands required to perform these steps:
+Upgrading the Docker deployment version is very simple, you just need to redeploy the latest Hubstr image. Here are the commands required to perform these steps:
 
 <Steps>
-  ### Stop and Remove the Current Running LobeHub Container
+  ### Stop and Remove the Current Running Hubstr Container
 
-  Assuming the LobeHub container is named `lobehub`, use the following commands to stop and remove the currently running LobeHub container:
+  Assuming the Hubstr container is named `lobehub`, use the following commands to stop and remove the currently running Hubstr container:
 
   ```fish
   docker stop lobehub
   docker rm lobehub
   ```
 
-  ### Pull the Latest LobeHub Image
+  ### Pull the Latest Hubstr Image
 
-  Use the following command to pull the latest Docker image for LobeHub:
+  Use the following command to pull the latest Docker image for Hubstr:
 
   ```fish
-  docker pull lobehub/lobehub
+  docker pull Hubstr-code/app
   ```
 
   ### Restart the Docker Container
 
-  Redeploy the LobeHub container using the newly pulled image:
+  Redeploy the Hubstr container using the newly pulled image:
 
   ```fish
   docker run -d -p 3210:3210 \
     -e OPENAI_API_KEY=sk-xxxx \
     -e OPENAI_PROXY_URL=https://api-proxy.com/v1 \
-    --name lobehub \
-    lobehub/lobehub
+    --name hubstr \
+    Hubstr-code/app
   ```
 </Steps>
 
@@ -80,7 +80,7 @@ Ensure that you have sufficient permissions to stop and remove the container bef
 <Callout type={'tip'}>
   **If I redeploy, will I lose my local chat records?**
 
-  No need to worry, you won't. All of LobeHub's chat records are stored in your local browser. Therefore, when redeploying LobeHub using Docker, your chat records will not be lost.
+  No need to worry, you won't. All of Hubstr's chat records are stored in your local browser. Therefore, when redeploying Hubstr using Docker, your chat records will not be lost.
 </Callout>
 
 If you wish to automate the above steps, you can follow the method below and use Crontab scheduling to complete it. The specific steps are as follows.
@@ -106,7 +106,7 @@ If you wish to automate the above steps, you can follow the method below and use
   export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
   # Pull the latest image and store the output in a variable
-  output=$(docker pull lobehub/lobehub:latest 2>&1)
+  output=$(docker pull Hubstr-code/app:latest 2>&1)
 
   # Check if the pull command was executed successfully
   if [ $? -ne 0 ]; then
@@ -114,7 +114,7 @@ If you wish to automate the above steps, you can follow the method below and use
   fi
 
   # Check if the output contains a specific string
-  echo "$output" | grep -q "Image is up to date for lobehub/lobehub:latest"
+  echo "$output" | grep -q "Image is up to date for Hubstr-code/app:latest"
 
   # If the image is already up to date, do nothing
   if [ $? -eq 0 ]; then
@@ -127,14 +127,14 @@ If you wish to automate the above steps, you can follow the method below and use
   echo "Removed: $(docker rm -f lobehub)"
 
   # Run the new container(Please change the path to the env file)
-  echo "Started: $(docker run -d --network=host --env-file /path/to/lobe.env --name=lobehub --restart=always lobehub/lobehub)"
+  echo "Started: $(docker run -d --network=host --env-file /path/to/lobe.env --name=lobehub --restart=always Hubstr-code/app)"
 
   # Print the update time and version
   echo "Update time: $(date)"
-  echo "Version: $(docker inspect lobehub/lobehub:latest | grep 'org.opencontainers.image.version' | awk -F'"' '{print $4}')"
+  echo "Version: $(docker inspect Hubstr-code/app:latest | grep 'org.opencontainers.image.version' | awk -F'"' '{print $4}')"
 
   # Clean up unused images
-  docker images | grep 'lobehub/lobehub' | grep -v 'latest' | awk '{print $3}' | xargs -r docker rmi > /dev/null 2>&1
+  docker images | grep 'Hubstr-code/app' | grep -v 'latest' | awk '{print $3}' | xargs -r docker rmi > /dev/null 2>&1
   echo "Removed old images."
   ```
 

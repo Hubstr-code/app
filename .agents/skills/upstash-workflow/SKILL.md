@@ -1,16 +1,16 @@
 ---
 name: upstash-workflow
-description: 'LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute fan-out, serve handlers, context.run/call/sleep, or workflow triggers.'
+description: 'Hubstr Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute fan-out, serve handlers, context.run/call/sleep, or workflow triggers.'
 user-invocable: false
 ---
 
 # Upstash Workflow Implementation Guide
 
-Standard patterns for implementing Upstash Workflow + QStash async workflows in the LobeHub codebase.
+Standard patterns for implementing Upstash Workflow + QStash async workflows in the Hubstr codebase.
 
 ## 🎯 The Three Core Patterns
 
-Every workflow in LobeHub combines these three patterns. They exist because the platform constrains you in three ways: rate limits make blind fan-out dangerous, step limits cap a single workflow's size, and idempotency demands that retries don't double-process.
+Every workflow in Hubstr combines these three patterns. They exist because the platform constrains you in three ways: rate limits make blind fan-out dangerous, step limits cap a single workflow's size, and idempotency demands that retries don't double-process.
 
 1. **🔍 Dry-Run Mode** — get statistics without triggering actual execution
 2. **🌟 Fan-Out Pattern** — split large batches into smaller chunks for parallel processing

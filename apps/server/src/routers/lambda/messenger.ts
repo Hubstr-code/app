@@ -135,7 +135,7 @@ const messengerWriteProcedure = messengerProcedure.use(withScopedPermission('age
 /**
  * Resolve the workspace scope of an agent the user wants to route the System
  * Bot to, authorizing access along the way. Because the bot is shared and
- * which LobeHub context a conversation runs in is derived from the *active
+ * which Hubstr context a conversation runs in is derived from the *active
  * agent*, every place that sets the active agent must re-authorize against
  * that agent's own workspace:
  *
@@ -238,7 +238,7 @@ export const messengerRouter = router({
    * before the user confirms. Does NOT consume the token.
    *
    * Also surfaces `linkedToEmail` when the IM identity is already bound to
-   * a LobeHub account — the page uses it to warn the user before they create
+   * a Hubstr account — the page uses it to warn the user before they create
    * a duplicate that would either fail the unique index or shadow another
    * account's binding. Email is partially masked for privacy.
    *
@@ -289,7 +289,7 @@ export const messengerRouter = router({
       }
 
       return {
-        // Set when the IM identity is already linked to some LobeHub account.
+        // Set when the IM identity is already linked to some Hubstr account.
         // The verify-im page compares against the current session email and
         // shows a warning when they don't match.
         linkedToEmail,
@@ -331,7 +331,7 @@ export const messengerRouter = router({
       }
 
       // Cross-user conflict: the (platform, tenant, platformUserId) tuple is
-      // already bound to a different LobeHub account. The DB unique index
+      // already bound to a different Hubstr account. The DB unique index
       // would surface this as an opaque "duplicate key" — replace with a
       // user-facing 409 carrying the masked email of the existing owner.
       const existingLink = await MessengerAccountLinkModel.findByPlatformUser(
@@ -397,7 +397,7 @@ export const messengerRouter = router({
           workspaceId: agentScope.workspaceId,
         });
       } catch (error) {
-        // Race backstop: the IM identity got bound to another LobeHub user
+        // Race backstop: the IM identity got bound to another Hubstr user
         // between the pre-check above and the upsert. Re-surface as the same
         // friendly 409 the verify-im UI already knows how to render.
         if (error instanceof MessengerAccountLinkConflictError) {
@@ -429,13 +429,13 @@ export const messengerRouter = router({
    * Agent list for the verify-im UI's "pick an initial agent" dropdown.
    *
    * Excludes virtual agents (page-copilot, etc.) but explicitly keeps the
-   * inbox/LobeAI agent — historical inbox sessions get migrated with
-   * `virtual=true`, so a plain virtual filter would hide LobeAI even though
+   * inbox/Hubstr AI agent — historical inbox sessions get migrated with
+   * `virtual=true`, so a plain virtual filter would hide Hubstr AI even though
    * the home sidebar shows it (sidebar fetches it separately via
    * `agent.getBuiltinAgent`).
    *
    * Order matches the home sidebar (`updatedAt DESC`). Title fallback for the
-   * inbox agent resolves to `"LobeAI"` + default avatar; everything else falls
+   * inbox agent resolves to `"Hubstr AI"` + default avatar; everything else falls
    * back on the client via `common.defaultSession`.
    */
   listAgentsForBinding: messengerProcedure
@@ -548,7 +548,7 @@ export const messengerRouter = router({
     }),
 
   /**
-   * List the Slack workspaces this LobeHub user has installed the bot into.
+   * List the Slack workspaces this Hubstr user has installed the bot into.
    * Used by the messenger settings page to render the "Connections" panel
    * (Manus's `manus.im/app#settings/integrations/slack` analogue). Returns
    * the safe metadata only — never the encrypted credentials.
@@ -613,7 +613,7 @@ export const messengerRouter = router({
         });
       }
       // Authorization: only the user who initiated the install can disconnect
-      // it. Workspace admins who installed via a different LobeHub account
+      // it. Workspace admins who installed via a different Hubstr account
       // can disconnect through their own settings page.
       if (row.installedByUserId !== ctx.userId) {
         throw new TRPCError({

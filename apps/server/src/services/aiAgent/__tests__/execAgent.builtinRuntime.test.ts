@@ -394,7 +394,7 @@ describe('AiAgentService.execAgent - builtin agent runtime config', () => {
     );
   });
 
-  it('should inject self-feedback intent tool for Lobe AI when user gate is enabled', async () => {
+  it('should inject self-feedback intent tool for Hubstr AI when user gate is enabled', async () => {
     mockGetAgentConfig.mockResolvedValue({
       chatConfig: {},
       id: 'agent-inbox',
@@ -533,7 +533,7 @@ describe('AiAgentService.execAgent - builtin agent runtime config', () => {
       topicId: 'topic-1',
     });
     expect(callArgs.initialContext.initialContext.taskManager.contextPrompt).toContain(
-      'Default Lobe AI agent id: agt_inbox',
+      'Default Hubstr AI agent id: agt_inbox',
     );
   });
 
@@ -570,7 +570,7 @@ describe('AiAgentService.execAgent - builtin agent runtime config', () => {
     );
   });
 
-  it('should not inject lobe-agent when the LobeHub routed model supports visual media natively', async () => {
+  it('should not inject lobe-agent when the Hubstr routed model supports visual media natively', async () => {
     mockGetAgentConfig.mockResolvedValue({
       chatConfig: {},
       id: 'agent-custom',

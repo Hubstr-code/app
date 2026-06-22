@@ -1,6 +1,6 @@
-# LobeHub Development Guidelines
+# Hubstr Development Guidelines
 
-Guidelines for using AI coding agents in this LobeHub repository.
+Guidelines for using AI coding agents in this Hubstr repository.
 
 ## Tech Stack
 
@@ -18,7 +18,7 @@ Guidelines for using AI coding agents in this LobeHub repository.
 lobehub/
 ├── apps/
 │   ├── desktop/            # Electron desktop app
-│   ├── cli/                # LobeHub CLI
+│   ├── cli/                # Hubstr CLI
 │   └── server/             # Server service
 ├── packages/               # Shared packages (@lobechat/*)
 │   ├── database/           # Database schemas, models, repositories
@@ -85,10 +85,10 @@ bun run dev
 After `dev:spa` starts, the terminal prints a **Debug Proxy** URL:
 
 ```plaintext
-Debug Proxy: https://app.lobehub.com/_dangerous_local_dev_proxy?debug-host=http%3A%2F%2Flocalhost%3A9876
+Debug Proxy: https://app.hubstr.com/_dangerous_local_dev_proxy?debug-host=http%3A%2F%2Flocalhost%3A9876
 ```
 
-Open this URL to develop locally against the production backend (app.lobehub.com). The proxy page loads your local Vite dev server's SPA into the online environment, enabling HMR with real server config.
+Open this URL to develop locally against the production backend (app.hubstr.com). The proxy page loads your local Vite dev server's SPA into the online environment, enabling HMR with real server config.
 
 ### Git Workflow
 
@@ -137,4 +137,4 @@ bun run type-check
 
 Before reviewing a PR / diff / branch change, read the **review-checklist** skill (`.agents/skills/review-checklist/SKILL.md`) — it lists the recurring mistakes specific to this codebase.
 
-When designing or reviewing user-facing flows (empty/loading/error states, confirmations, async feedback, button hierarchy, lists at scale, pickers), follow the **ux** skill (`.agents/skills/ux/SKILL.md`) — LobeHub's design values (自然 / 意义感 / 确定性) plus per-aspect execution checklists.
+When designing or reviewing user-facing flows (empty/loading/error states, confirmations, async feedback, button hierarchy, lists at scale, pickers), follow the **ux** skill (`.agents/skills/ux/SKILL.md`) — Hubstr's design values (自然 / 意义感 / 确定性) plus per-aspect execution checklists.

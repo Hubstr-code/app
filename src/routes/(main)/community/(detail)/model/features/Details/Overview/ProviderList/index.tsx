@@ -142,10 +142,10 @@ const ProviderList = memo(() => {
               dataIndex: 'action',
               key: 'action',
               render: (_, record) => {
-                const isLobeHub = record.id === 'lobehub';
+                const isHubstr = record.id === 'lobehub';
                 return (
                   <Flexbox horizontal align="center" gap={4} justify={'flex-end'}>
-                    {isLobeHub && (
+                    {isHubstr && (
                       <Tooltip title={t('models.providerInfo.officialTooltip')}>
                         <ActionIcon
                           color={cssVar.colorSuccess}
@@ -155,7 +155,7 @@ const ProviderList = memo(() => {
                         />
                       </Tooltip>
                     )}
-                    {!isLobeHub && (
+                    {!isHubstr && (
                       <Tooltip title={t('models.providerInfo.apiTooltip')}>
                         <ActionIcon
                           icon={<Icon icon={KeyIcon} />}

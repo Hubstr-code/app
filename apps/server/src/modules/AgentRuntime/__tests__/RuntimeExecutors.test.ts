@@ -79,7 +79,7 @@ vi.mock('@/business/client/model-bank/loadModels', () => ({
 vi.mock('model-bank', () => ({
   LOBE_DEFAULT_MODEL_LIST: mockBuiltinModels,
   ModelProvider: {
-    LobeHub: 'lobehub',
+    Hubstr: 'lobehub',
   },
 }));
 
@@ -1606,7 +1606,7 @@ describe('RuntimeExecutors', () => {
         );
       });
 
-      it('should resolve LobeHub routed model knowledge cutoff by model id fallback', async () => {
+      it('should resolve Hubstr routed model knowledge cutoff by model id fallback', async () => {
         const ctxWithConfig: RuntimeExecutorContext = {
           ...ctx,
           agentConfig: {
@@ -1634,7 +1634,7 @@ describe('RuntimeExecutors', () => {
         );
       });
 
-      it('should omit model knowledge cutoff for unknown non-LobeHub providers', async () => {
+      it('should omit model knowledge cutoff for unknown non-Hubstr providers', async () => {
         const ctxWithConfig: RuntimeExecutorContext = {
           ...ctx,
           agentConfig: {

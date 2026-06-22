@@ -10,11 +10,11 @@ import { SkillStoreTab } from '../SkillStoreContent';
 
 interface SearchProps {
   activeTab: SkillStoreTab;
-  onLobeHubSearch: (keywords: string) => void;
+  onHubstrSearch: (keywords: string) => void;
   onSkillSearch: (keywords: string) => void;
 }
 
-export const Search = memo<SearchProps>(({ activeTab, onLobeHubSearch, onSkillSearch }) => {
+export const Search = memo<SearchProps>(({ activeTab, onHubstrSearch, onSkillSearch }) => {
   const { t } = useTranslation('setting');
   const mcpKeywords = useToolStore((s) => s.mcpSearchKeywords);
 
@@ -34,7 +34,7 @@ export const Search = memo<SearchProps>(({ activeTab, onLobeHubSearch, onSkillSe
             } else if (activeTab === SkillStoreTab.Skills) {
               onSkillSearch(keywords);
             } else {
-              onLobeHubSearch(keywords);
+              onHubstrSearch(keywords);
             }
           }}
         />

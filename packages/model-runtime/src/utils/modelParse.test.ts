@@ -116,7 +116,7 @@ vi.mock('model-bank', () => ({
   },
   LOBE_DEFAULT_MODEL_LIST: mockDefaultModelList,
   loadModels: vi.fn().mockResolvedValue(mockDefaultModelList),
-  ModelProvider: { LobeHub: 'lobehub' },
+  ModelProvider: { Hubstr: 'lobehub' },
   // 新增 provider 专用清单，供 findKnownModelByProvider 使用
   google: [
     {

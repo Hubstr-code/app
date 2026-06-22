@@ -29,7 +29,7 @@ describe('getModelPricing', () => {
     ]);
   });
 
-  it('should use injected LobeHub pricing before same-id fallback pricing', async () => {
+  it('should use injected Hubstr pricing before same-id fallback pricing', async () => {
     loadModelsMock.mockResolvedValue([
       {
         id: 'injected-only-model',

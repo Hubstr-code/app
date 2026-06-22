@@ -11,13 +11,14 @@ import { useAgentStore } from '@/store/agent';
 import { agentByIdSelectors, agentSelectors, builtinAgentSelectors } from '@/store/agent/selectors';
 import { useUserStore } from '@/store/user';
 import { userGeneralSettingsSelectors } from '@/store/user/slices/settings/selectors';
+import { DEFAULT_INBOX_TITLE } from '@lobechat/const';
 
 const AgentInfo = memo(() => {
   const { t } = useTranslation(['chat', 'welcome']);
   // Scope the welcome to the conversation's agent, not the global
   // `activeAgentId`. In the multi-tab desktop app `activeAgentId` is shared and
   // can momentarily point at another tab's agent (or the inbox), which used to
-  // flash this card back to the inbox "Lobe AI" identity.
+  // flash this card back to the inbox "Hubstr AI" identity.
   const agentId = useConversationStore(contextSelectors.agentId) || '';
   const inboxAgentId = useAgentStore(builtinAgentSelectors.inboxAgentId);
   const isInbox = !!inboxAgentId && agentId === inboxAgentId;
@@ -29,7 +30,7 @@ const AgentInfo = memo(() => {
   const fontSize = useUserStore(userGeneralSettingsSelectors.fontSize);
 
   const displayTitle = isInbox
-    ? meta.title || 'Lobe AI'
+    ? meta.title || DEFAULT_INBOX_TITLE
     : meta.title || t('defaultSession', { ns: 'common' });
 
   const message = useMemo(() => {

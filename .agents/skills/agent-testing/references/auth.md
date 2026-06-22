@@ -164,7 +164,7 @@ reachable.
 
 These recipes only cover **local dev** authentication. They do not:
 
-- Work for production — production cookies are `Secure; HttpOnly; Domain=.lobehub.com`
+- Work for production — production cookies are `Secure; HttpOnly; Domain=.hubstr.com`
   and must be delivered over HTTPS.
 - Replace real OAuth flows — tests that must exercise the login UI itself need a
   real Chromium with `--remote-debugging-port` or a bot account.

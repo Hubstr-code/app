@@ -143,15 +143,15 @@ describe('getServerGlobalConfig', () => {
     vi.restoreAllMocks();
   });
 
-  it('should only enable LobeHub by default in business feature mode', async () => {
+  it('should only enable Hubstr by default in business feature mode', async () => {
     const providerConfig = await loadCapturedProviderConfig(true);
 
-    expect(providerConfig[ModelProvider.LobeHub].enabled).toBe(true);
+    expect(providerConfig[ModelProvider.Hubstr].enabled).toBe(true);
     expect(providerConfig[ModelProvider.DeepSeek].enabled).toBe(false);
     expect(providerConfig[ModelProvider.Ollama].fetchOnClient).toBe(true);
 
     for (const provider of Object.values(ModelProvider)) {
-      if (provider === ModelProvider.LobeHub) continue;
+      if (provider === ModelProvider.Hubstr) continue;
 
       expect(providerConfig[provider].enabled).toBe(false);
     }
@@ -160,7 +160,7 @@ describe('getServerGlobalConfig', () => {
   it('should keep upstream defaults outside business feature mode', async () => {
     const providerConfig = await loadCapturedProviderConfig(false);
 
-    expect(providerConfig[ModelProvider.LobeHub]).toBeUndefined();
+    expect(providerConfig[ModelProvider.Hubstr]).toBeUndefined();
     expect(providerConfig[ModelProvider.OpenAI]).toBeUndefined();
     expect(providerConfig[ModelProvider.DeepSeek].enabled).toBe(true);
   });
