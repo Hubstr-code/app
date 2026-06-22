@@ -269,7 +269,7 @@ exports[`configRouter > getGlobalConfig > Model Provider env > OPENAI_MODEL_LIST
 
 exports[`configRouter > getGlobalConfig > Model Provider env > OPENROUTER_MODEL_LIST > custom deletion, addition, and renaming of models 1`] = `
 {
-  "enabled": false,
+  "enabled": true,
   "enabledModels": [
     "meta-llama/llama-3.1-8b-instruct:free",
     "google/gemma-2-9b-it:free",

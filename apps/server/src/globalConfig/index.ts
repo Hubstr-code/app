@@ -66,6 +66,9 @@ export const getServerGlobalConfig = async () => {
     ollamacloud: {
       enabledKey: 'ENABLED_OLLAMA_CLOUD',
     },
+    openrouter: {
+      enabled: true,
+    },
     qwen: {
       withDeploymentName: true,
     },

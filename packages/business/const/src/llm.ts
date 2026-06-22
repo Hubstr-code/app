@@ -1,9 +1,9 @@
 export const DEFAULT_EMBEDDING_PROVIDER = 'openai';
 
-export const DEFAULT_MODEL = 'deepseek-v4-pro';
-export const DEFAULT_PROVIDER = 'deepseek';
-export const DEFAULT_MINI_MODEL = 'gpt-5.4-mini';
-export const DEFAULT_MINI_PROVIDER = 'openai';
+export const DEFAULT_MODEL = 'deepseek/deepseek-chat-v3.1';
+export const DEFAULT_PROVIDER = 'openrouter';
+export const DEFAULT_MINI_MODEL = 'google/gemini-2.5-flash';
+export const DEFAULT_MINI_PROVIDER = 'openrouter';
 
-export const DEFAULT_ONBOARDING_MODEL = 'gemini-3-flash-preview';
-export const DEFAULT_ONBOARDING_PROVIDER = 'google';
+export const DEFAULT_ONBOARDING_MODEL = 'google/gemini-2.5-flash';
+export const DEFAULT_ONBOARDING_PROVIDER = 'openrouter';

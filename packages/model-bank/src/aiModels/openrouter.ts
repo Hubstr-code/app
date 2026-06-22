@@ -867,6 +867,8 @@ const openrouterChatModels: AIChatModelCard[] = [
   },
 ];
 
-export const allModels = [...openrouterChatModels];
+// Enable all OpenRouter models by default so the full curated catalog is available out of the box.
+// Users can still toggle individual models in settings, or fetch the live OpenRouter catalog.
+export const allModels = openrouterChatModels.map((model) => ({ enabled: true, ...model }));
 
 export default allModels;
